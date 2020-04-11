@@ -31,13 +31,27 @@ ul {
 }
 
 .switch-element {
+    position: relative;
+    display: flex;
     width: 100px;
     height: 32px;
+    background: linear-gradient(to right, #009bad, #00bf84);
     border-style: solid;
     border-width: 2px;
     border-color: white;
     border-radius: 5px;
-    background: linear-gradient(to right, #009bad, #00bf84);
+    color: white;
+}
+
+.switch-element-text{
+    position: absolute;
+    left: 35px;
+    top: -8px;
+}
+
+.switch-text-game-mode {
+    position: absolute;
+    left: 5px;
 }
 
 .switch-element-game-mode {
@@ -55,7 +69,7 @@ ul {
     border-color: #cecece;
     border-radius: 3px;
     transition-property: margin-left;
-    transition-duration: 500ms;
+    transition-duration: 250ms;
 }
 
 .card-wrap {
@@ -73,6 +87,8 @@ ul {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #009bad 15%, #00bf84 50%, white 50%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 .card-game-mode {
