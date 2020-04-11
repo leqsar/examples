@@ -18,9 +18,21 @@ ul {
     padding: 0;
 }
 
+main {
+    display: flex;
+    height: 95vh;
+    overflow: hidden;
+}
+
+.burger-menu {
+    z-index: 2;
+}
+
 .burger-menu ul {
     display: flex;
     flex-direction: column;
+    transition-property: transform;
+    transition-duration: 500ms;
 }
 
 .burger-menu li {
@@ -41,6 +53,7 @@ ul {
     border-color: white;
     border-radius: 5px;
     color: white;
+    cursor: pointer;
 }
 
 .switch-element-text{
@@ -89,6 +102,11 @@ ul {
     background: linear-gradient(to bottom, #009bad 15%, #00bf84 50%, white 50%);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
 .card-game-mode {
@@ -102,4 +120,30 @@ ul {
     border-width: 10px;
     border-style: solid;
     border-color: white;
+}
+
+.burger-menu-wrap {
+    position: absolute;
+    top: -95px;
+    left: -25vw;
+    width: 25vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #009bad, #00bf84);
+    font-size: 25px;
+    color: white;
+    transition-property: left;
+    transition-duration: 500ms;
+}
+
+.burger-menu-wrap p {
+    margin-left: 80px;
+}
+
+.burger-menu-wrap p:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.burger-menu-wrap p:first-child {
+    margin-top: 250px;
 }

@@ -1,14 +1,19 @@
 window.onload = () => {
     const switchElement = document.querySelector('.switch-element'),
         slider = document.querySelector('.slider'),
-        allCards = document.querySelectorAll('.card');
+        allCards = document.querySelectorAll('.card'),
+        menu = document.querySelector('.burger-menu-wrap'),
+        menuButton = document.querySelector('.burger-menu'),
+        burgerIcon = document.querySelectorAll('LI'),
+        burgerIconWrap = document.querySelector('.burger-menu UL');
     let mode = 'train',
+        isMenuOpen = false,
         nameOfMode = document.createElement('P');
     nameOfMode.textContent = `${mode.toUpperCase()}`;
     nameOfMode.classList.add('switch-element-text');
     switchElement.prepend(nameOfMode);
 
-    slider.addEventListener('click', () => {
+    switchElement.addEventListener('click', () => {
         mode = mode == 'train' ? 'game' : 'train';
         nameOfMode.textContent = `${mode.toUpperCase()}`;
         if (mode == 'train') {
@@ -28,4 +33,14 @@ window.onload = () => {
         }
     });
 
+    menuButton.addEventListener('click', () => {
+        isMenuOpen = isMenuOpen == true ? false : true;
+        if (isMenuOpen) {
+            menu.style.left = '0vw';
+            burgerIconWrap.style.transform = 'rotate(90deg)';
+        } else {
+            menu.style.left = '-25vw';
+            burgerIconWrap.style.transform = 'rotate(0deg)';
+        }
+    })
 }
