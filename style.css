@@ -40,6 +40,10 @@ ul {
     background: linear-gradient(to right, #009bad, #00bf84);
 }
 
+.switch-element-game-mode {
+    background: linear-gradient(to right, #fd6c63, #feb36b);
+}
+
 .slider {
     width: 25px;
     height: 25px;
@@ -50,6 +54,8 @@ ul {
     border-width: 2px;
     border-color: #cecece;
     border-radius: 3px;
+    transition-property: margin-left;
+    transition-duration: 500ms;
 }
 
 .card-wrap {
@@ -67,6 +73,10 @@ ul {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, #009bad 15%, #00bf84 50%, white 50%);
+}
+
+.card-game-mode {
+    background: linear-gradient(to bottom, #fd6c63 15%, #feb36b 50%, white 50%);
 }
 
 .card img {
