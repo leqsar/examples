@@ -147,3 +147,7 @@ main {
 .burger-menu-wrap p:first-child {
     margin-top: 250px;
 }
+
+.burger-menu-game-mode {
+    background: linear-gradient(to bottom, #fd6c63, #feb36b);
+}
