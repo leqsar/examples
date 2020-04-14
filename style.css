@@ -18,6 +18,10 @@ ul {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+
 main {
     display: flex;
     height: 95vh;
@@ -102,6 +106,8 @@ main {
     background: linear-gradient(to bottom, #009bad 15%, #00bf84 50%, white 50%);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition-property: box-shadow;
+    transition-duration: 400ms;
     cursor: pointer;
 }
 
