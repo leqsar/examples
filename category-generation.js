@@ -3,7 +3,9 @@ import defineLink from './define-link.js';
 
 export default function categoryGeneration () {
     const allWords = document.querySelectorAll('.word'),
-        allImages = document.querySelectorAll('.card IMG');
+        allImages = document.querySelectorAll('.card IMG'),
+        allBacksideImages = document.querySelectorAll('.card-backside IMG'),
+        allRussianWords = document.querySelectorAll('.russian-word');
     let category = localStorage.getItem('category');
     switch (category) {
         case 'Action (set A)':
@@ -37,8 +39,14 @@ export default function categoryGeneration () {
         allWords.forEach((word, i)=> {
             word.prepend(`${wordsInformation[i].word}`);
         });
+        allRussianWords.forEach((russianWord, i) => {
+            russianWord.prepend(`${wordsInformation[i].translation}`);
+        });
         allImages.forEach((img, i) => {
             img.src = `${wordsInformation[i].image}`;
+        });
+        allBacksideImages.forEach((backsideImg, i) => {
+            backsideImg.src = `${wordsInformation[i].image}`;
         });
     }
 }
