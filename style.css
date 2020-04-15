@@ -91,7 +91,7 @@ main {
 
 .card-wrap {
     display: grid;
-    margin-top: 30px;
+    margin-top: 70px;
     margin-left: 70px;
     grid-template-rows: repeat(2, 260px);
     grid-template-columns: repeat(4, 300px);
@@ -174,9 +174,10 @@ main {
 /* styles for category.html*/
 .heading {
     width: 200px;
-    margin-left: 20px auto;
+    margin: 30px auto;
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
+    color: rgba(0,0,0,0.5);
 }
 
 .card,
@@ -200,11 +201,12 @@ main {
 
 .word,
 .russian-word {
-    width: 50%;
-    margin-left: 40%;
-    font-size: 25px;
+    width: 65%;
+    margin-left: 20%;
+    font-size: 20px;
     font-family: 'Roboto', sans-serif;
     background-color: white;
+    text-align: center;
 }
 
 .russian-word {
