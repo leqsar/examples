@@ -5,7 +5,8 @@ export default function categoryGeneration () {
     const allWords = document.querySelectorAll('.word'),
         allImages = document.querySelectorAll('.card IMG'),
         allBacksideImages = document.querySelectorAll('.card-backside IMG'),
-        allRussianWords = document.querySelectorAll('.russian-word');
+        allRussianWords = document.querySelectorAll('.russian-word'),
+        allAudio = document.querySelectorAll('AUDIO');
     let category = localStorage.getItem('category');
     switch (category) {
         case 'Action (set A)':
@@ -47,6 +48,9 @@ export default function categoryGeneration () {
         });
         allBacksideImages.forEach((backsideImg, i) => {
             backsideImg.src = `${wordsInformation[i].image}`;
+        });
+        allAudio.forEach((audio, i) => {
+            audio.src = `${wordsInformation[i].audioSrc}`;
         });
     }
 }
