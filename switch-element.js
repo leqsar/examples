@@ -1,7 +1,7 @@
 export default function changeMode() {
     const switchElement = document.querySelector('.switch-element'),
         slider = document.querySelector('.slider'),
-        allCards = document.querySelectorAll('.card'),
+        allCards = document.querySelectorAll('.category'),
         menu = document.querySelector('.burger-menu-wrap'),
         burgerIcon = document.querySelectorAll('LI');
     let mode = 'train',
