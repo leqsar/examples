@@ -4,15 +4,21 @@ export default function changeMode() {
         allCards = document.querySelectorAll('.category'),
         menu = document.querySelector('.burger-menu-wrap'),
         burgerIcon = document.querySelectorAll('LI');
-    let mode = 'train',
+    let mode = sessionStorage.getItem('mode') == null ? 'train' : sessionStorage.getItem('mode'),
         nameOfMode = document.createElement('P');
     nameOfMode.textContent = `${mode.toUpperCase()}`;
     nameOfMode.classList.add('switch-element-text');
     switchElement.prepend(nameOfMode);
 
+    if (mode == 'game') {
+        slider.style.transitionDuration = '0ms';
+        addGameModeStyles();
+    }
+
     switchElement.addEventListener('click', () => {
         mode = mode == 'train' ? 'game' : 'train';
         nameOfMode.textContent = `${mode.toUpperCase()}`;
+        sessionStorage.setItem('mode', mode);
         if (mode == 'train') {
             slider.style.marginLeft = '2px';
             switchElement.classList.remove('switch-element-game-mode');
@@ -22,13 +28,18 @@ export default function changeMode() {
                 item.classList.remove('card-game-mode');
             });
         } else {
-            slider.style.marginLeft = '68px';
-            switchElement.classList.add('switch-element-game-mode');
-            nameOfMode.classList.add('switch-text-game-mode');
-            menu.classList.add('burger-menu-game-mode');
-            allCards.forEach(item => {
-                item.classList.add('card-game-mode');
-            });
+            slider.style.transitionDuration = '250ms';
+            addGameModeStyles();
         }
     });
+
+    function addGameModeStyles() {
+        slider.style.marginLeft = '68px';
+        switchElement.classList.add('switch-element-game-mode');
+        nameOfMode.classList.add('switch-text-game-mode');
+        menu.classList.add('burger-menu-game-mode');
+        allCards.forEach(item => {
+            item.classList.add('card-game-mode');
+        });
+    }
 }
