@@ -7,7 +7,6 @@ window.onload = () => {
     changeMode();
     burgerMenuOpen();
     if (window.location.href == "file:///D:/Study/JSProjects/english-for-kids/index.html") {
-        console.log('main page');
         defineLink();
     } else {
         defineLink();

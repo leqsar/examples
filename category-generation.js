@@ -2,7 +2,8 @@ import cards from './consts.js';
 import defineLink from './define-link.js';
 
 export default function categoryGeneration () {
-    const allWords = document.querySelectorAll('.word');
+    const allWords = document.querySelectorAll('.word'),
+        allImages = document.querySelectorAll('.card IMG');
     let category = localStorage.getItem('category');
     switch (category) {
         case 'Action (set A)':
@@ -35,6 +36,9 @@ export default function categoryGeneration () {
     function generation(wordsInformation) {
         allWords.forEach((word, i)=> {
             word.prepend(`${wordsInformation[i].word}`);
+        });
+        allImages.forEach((img, i) => {
+            img.src = `${wordsInformation[i].image}`;
         });
     }
 }
