@@ -172,6 +172,13 @@ main {
 }
 
 /* styles for category.html*/
+.heading {
+    width: 200px;
+    margin-left: 20px auto;
+    font-size: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
 .card,
 .card-backside {
     height: 100%;

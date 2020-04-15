@@ -6,8 +6,14 @@ export default function categoryGeneration () {
         allImages = document.querySelectorAll('.card IMG'),
         allBacksideImages = document.querySelectorAll('.card-backside IMG'),
         allRussianWords = document.querySelectorAll('.russian-word'),
-        allAudio = document.querySelectorAll('AUDIO');
+        allAudio = document.querySelectorAll('AUDIO'),
+        heading = document.createElement('P'),
+        burgerIcon = document.querySelector('.burger-menu');
     let category = localStorage.getItem('category');
+    heading.classList.add('heading');
+    heading.textContent = `${category}`;
+    burgerIcon.after(heading);
+
     switch (category) {
         case 'Action (set A)':
             generation(cards.actionA);
@@ -36,6 +42,7 @@ export default function categoryGeneration () {
         default:
 
     }
+
     function generation(wordsInformation) {
         allWords.forEach((word, i)=> {
             word.prepend(`${wordsInformation[i].word}`);
