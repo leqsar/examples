@@ -1,13 +1,9 @@
 import cards from './consts.js';
 import defineLink from './define-link.js';
+import generation from './generation.js';
 
 export default function categoryGeneration () {
-    const allWords = document.querySelectorAll('.word'),
-        allImages = document.querySelectorAll('.card IMG'),
-        allBacksideImages = document.querySelectorAll('.card-backside IMG'),
-        allRussianWords = document.querySelectorAll('.russian-word'),
-        allAudio = document.querySelectorAll('AUDIO'),
-        heading = document.createElement('P'),
+    const heading = document.createElement('P'),
         burgerIcon = document.querySelector('.burger-menu');
     let category = localStorage.getItem('category');
     heading.classList.add('heading');
@@ -40,24 +36,5 @@ export default function categoryGeneration () {
             generation(cards.emotion);
             break;
         default:
-
-    }
-
-    function generation(wordsInformation) {
-        allWords.forEach((word, i)=> {
-            word.prepend(`${wordsInformation[i].word}`);
-        });
-        allRussianWords.forEach((russianWord, i) => {
-            russianWord.prepend(`${wordsInformation[i].translation}`);
-        });
-        allImages.forEach((img, i) => {
-            img.src = `${wordsInformation[i].image}`;
-        });
-        allBacksideImages.forEach((backsideImg, i) => {
-            backsideImg.src = `${wordsInformation[i].image}`;
-        });
-        allAudio.forEach((audio, i) => {
-            audio.src = `${wordsInformation[i].audioSrc}`;
-        });
     }
 }
