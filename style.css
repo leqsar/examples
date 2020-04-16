@@ -243,6 +243,8 @@ a {
 
 .card-container {
     perspective: 1000;
+    transition-property: height;
+    transition-duration: 200ms;
 }
 
 .card-container.flip .flipper {
@@ -262,6 +264,14 @@ a {
     transform: rotateY(180deg);
 }
 /*////////////////*/
+/*styles for game mode*/
+.game-mode-image {
+    width: 100%;
+    height: 100%;
+}
+
+
+/*/////////////////*/
 
 @media (max-width: 1399px) {
     .card-wrap {

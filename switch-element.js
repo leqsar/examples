@@ -1,3 +1,6 @@
+import turnOnGameMode from './gameMode.js';
+
+
 export default function changeMode() {
     const switchElement = document.querySelector('.switch-element'),
         slider = document.querySelector('.slider'),
@@ -20,12 +23,21 @@ export default function changeMode() {
         nameOfMode.textContent = `${mode.toUpperCase()}`;
         sessionStorage.setItem('mode', mode);
         if (mode == 'train') {
+            const allImages = document.querySelectorAll('.card IMG'),
+                cardContainers = document.querySelectorAll('.card-container'),
+                wordContainers = document.querySelectorAll('.word-wrap');
             slider.style.marginLeft = '2px';
             switchElement.classList.remove('switch-element-game-mode');
             nameOfMode.classList.remove('switch-text-game-mode');
             menu.classList.remove('burger-menu-game-mode');
             allCards.forEach(item => {
                 item.classList.remove('card-game-mode');
+            });    
+            wordContainers.forEach(wordContainer => {
+                wordContainer.style.display = 'flex';
+            });
+            cardContainers.forEach(cardContainer => {
+                cardContainer.style.height = '260px';
             });
         } else {
             slider.style.transitionDuration = '250ms';
@@ -41,5 +53,6 @@ export default function changeMode() {
         allCards.forEach(item => {
             item.classList.add('card-game-mode');
         });
+        turnOnGameMode();
     }
 }

@@ -1,8 +1,12 @@
 export default function playAudio () {
-    const images = document.querySelectorAll('.card IMG');
+    const images = document.querySelectorAll('.card IMG'),
+        modeWrap = document.querySelector('.switch-element-text');
+
     images.forEach(img => {
         img.addEventListener('click', () => {
-            img.nextElementSibling.nextElementSibling.play();
-        })
+                if (modeWrap.textContent == 'TRAIN') {
+                img.nextElementSibling.nextElementSibling.play();
+            }
+        });
     });
 }
