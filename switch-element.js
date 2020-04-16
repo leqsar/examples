@@ -25,20 +25,22 @@ export default function changeMode() {
         if (mode == 'train') {
             const allImages = document.querySelectorAll('.card IMG'),
                 cardContainers = document.querySelectorAll('.card-container'),
-                wordContainers = document.querySelectorAll('.word-wrap');
+                wordContainers = document.querySelectorAll('.word-wrap'),
+                startGameButton = document.querySelector('.game-button');
             slider.style.marginLeft = '2px';
             switchElement.classList.remove('switch-element-game-mode');
             nameOfMode.classList.remove('switch-text-game-mode');
             menu.classList.remove('burger-menu-game-mode');
             allCards.forEach(item => {
                 item.classList.remove('card-game-mode');
-            });    
+            });
             wordContainers.forEach(wordContainer => {
                 wordContainer.style.display = 'flex';
             });
             cardContainers.forEach(cardContainer => {
                 cardContainer.style.height = '260px';
             });
+            startGameButton.style.display = 'none';
         } else {
             slider.style.transitionDuration = '250ms';
             addGameModeStyles();
