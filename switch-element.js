@@ -26,7 +26,8 @@ export default function changeMode() {
             const allImages = document.querySelectorAll('.card IMG'),
                 cardContainers = document.querySelectorAll('.card-container'),
                 wordContainers = document.querySelectorAll('.word-wrap'),
-                startGameButton = document.querySelector('.game-button');
+                startGameButton = document.querySelector('.game-button'),
+                repeatButton = document.querySelector('.repeat-button');
             slider.style.marginLeft = '2px';
             switchElement.classList.remove('switch-element-game-mode');
             nameOfMode.classList.remove('switch-text-game-mode');
@@ -41,6 +42,7 @@ export default function changeMode() {
                 cardContainer.style.height = '260px';
             });
             startGameButton.style.display = 'none';
+            repeatButton.style.visibility = 'hidden';
         } else {
             slider.style.transitionDuration = '250ms';
             addGameModeStyles();

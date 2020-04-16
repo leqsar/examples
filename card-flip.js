@@ -1,5 +1,5 @@
 export default function cardFlip () {
-    const flipButton = document.querySelectorAll('I'),
+    const flipButton = document.querySelectorAll('.card I'),
         cardContainers = document.querySelectorAll('.card-container');
     flipButton.forEach((button, i) => {
         button.addEventListener('click', event => {
