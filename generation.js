@@ -3,7 +3,7 @@ export default function generation(wordsInformation) {
         allImages = document.querySelectorAll('.card IMG'),
         allBacksideImages = document.querySelectorAll('.card-backside IMG'),
         allRussianWords = document.querySelectorAll('.russian-word'),
-        allAudio = document.querySelectorAll('AUDIO'),
+        allAudio = document.querySelectorAll('.card AUDIO'),
         wordContainer = document.querySelector('.word-wrap');
 
         allWords.forEach((word, i)=> {
