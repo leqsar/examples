@@ -1,6 +1,7 @@
 header,
 main {
     max-width: 1400px;
+    width: 100vw;
     margin: 0 auto;
 }
 
@@ -147,7 +148,7 @@ a {
     top: -95px;
     left: -25vw;
     width: 25vw;
-    height: 100vh;
+    height: 1200px;
     background: linear-gradient(to bottom, #009bad, #00bf84);
     font-size: 25px;
     color: white;
@@ -261,3 +262,48 @@ a {
     transform: rotateY(180deg);
 }
 /*////////////////*/
+
+@media (max-width: 1399px) {
+    .card-wrap {
+        margin: 70px auto;
+        grid-template-columns: repeat(3, 300px);
+        gap: 35px;
+    }
+}
+
+@media (min-width: 680px) and (max-width: 1000px) {
+    .card-wrap {
+        margin: 70px auto;
+        grid-template-rows: repeat(4, 260px);
+        grid-template-columns: repeat(2, 300px);
+        gap: 35px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 679px) {
+    .card-wrap {
+        margin: 70px auto;
+        grid-template-rows: repeat(8, 260px);
+        grid-template-columns: repeat(1, 300px);
+        gap: 35px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+    .card-wrap {
+        margin: 70px auto;
+        grid-template-rows: repeat(8, 250px);
+        grid-template-columns: repeat(1, 250px);
+        gap: 35px;
+    }
+
+    .burger-menu-wrap {
+        height: 1200px;
+        font-size: 15px;
+    }
+
+    .burger-menu-wrap p {
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+}
