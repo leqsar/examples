@@ -300,6 +300,34 @@ a {
     height: 100%;
 }
 
+.progress-bar-wrap {
+  display: flex;
+  position: absolute;
+  left: 80vw;
+  width: 360px;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  overflow: hidden;
+}
+
+.right-answer-icon,
+.wrong-answer-icon {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 5px;
+}
+
+.right-answer-icon {
+  background-color: green;
+}
+
+.wrong-answer-icon {
+  background-color: red;
+}
+
 
 /*/////////////////*/
 

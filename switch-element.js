@@ -41,8 +41,10 @@ export default function changeMode() {
             cardContainers.forEach(cardContainer => {
                 cardContainer.style.height = '260px';
             });
-            startGameButton.style.display = 'none';
-            repeatButton.style.visibility = 'hidden';
+            if (startGameButton !== null) {
+              startGameButton.style.display = 'none';
+              repeatButton.style.visibility = 'hidden';
+            }
         } else {
             slider.style.transitionDuration = '250ms';
             addGameModeStyles();
