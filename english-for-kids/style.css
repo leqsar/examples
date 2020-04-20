@@ -310,7 +310,7 @@ a {
 .progress-bar-wrap {
   display: flex;
   position: absolute;
-  left: 80vw;
+  left: 70vw;
   width: 360px;
   height: 60px;
   justify-content: center;
@@ -328,18 +328,18 @@ a {
 }
 
 .right-answer-icon {
-  background-color: green;
+  background-color: #00bf84;
 }
 
 .wrong-answer-icon {
-  background-color: red;
+  background-color: #fd6c63;
 }
 
 .result-image-wrap {
   display: flex;
   position: absolute;
-  left: 30vw;
-  top: 30vw;
+  left: 35vw;
+  top: 20vw;
   width: 100vw;
   height: 100vh;
   visibility: hidden;

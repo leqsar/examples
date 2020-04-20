@@ -18,6 +18,6 @@ export default function result(success) {
         resultImageContainer.style.visibility = 'visible';
     }, 500);
     setTimeout(() => {
-        document.location.href = "file:///D:/js/english-for-kids/index.html";
+        document.location.href = "index.html";
     }, 3500);
 }
