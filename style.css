@@ -33,7 +33,7 @@ a {
 }
 
 .burger-menu {
-    z-index: 2;
+    z-index: 4;
 }
 
 .burger-menu ul {
@@ -154,7 +154,7 @@ a {
     top: -95px;
     left: -25vw;
     width: 25vw;
-    height: 1200px;
+    height: 105vh;
     background: linear-gradient(to bottom, #009bad, #00bf84);
     font-size: 25px;
     color: white;
