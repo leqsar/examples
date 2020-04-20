@@ -7,7 +7,7 @@ export default function changeMode() {
         allCards = document.querySelectorAll('.category'),
         menu = document.querySelector('.burger-menu-wrap'),
         burgerIcon = document.querySelectorAll('LI');
-    let mode = sessionStorage.getItem('mode') == null ? 'train' : sessionStorage.getItem('mode'),
+    let mode = localStorage.getItem('mode') == null ? 'train' : sessionStorage.getItem('mode'),
         nameOfMode = document.createElement('P');
     nameOfMode.textContent = `${mode.toUpperCase()}`;
     nameOfMode.classList.add('switch-element-text');
@@ -50,8 +50,6 @@ export default function changeMode() {
             inactiveImgs.forEach(inactiveImg => {
                 inactiveImg.style.opacity = '1';
             });
-
-
             if (startGameButton !== null) {
                 startGameButton.style.display = 'none';
                 repeatButton.style.visibility = 'hidden';

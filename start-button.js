@@ -3,7 +3,6 @@ import result from './resultOutput.js';
 
 export default function startButton() {
     let currentAudio, currentWord,
-        mode = document.querySelector('.switch-element-text').textContent,
         allAudio = document.querySelectorAll('.card AUDIO');
     const cards = document.querySelectorAll('.card'),
         startButton = document.querySelector('.game-button'),
@@ -16,14 +15,15 @@ export default function startButton() {
         });
 
         startButton.addEventListener('click', () => {
+            let mode = document.querySelector('.switch-element-text').textContent;
             startButton.style.display = 'none';
             repeatButton.style.visibility = 'visible';
-            randomizer(allAudio.length);
+            randomizer(allAudio.length, mode);
             cards.forEach(card => {
                 card.addEventListener('click', event => {
-                    progressBar.style.visibility = 'visible';
-                    console.log(mode);
+                    mode = document.querySelector('.switch-element-text').textContent;
                     if ((mode == 'GAME') && (!card.classList.contains('unactive'))) {
+                        progressBar.style.visibility = 'visible';
                         let src =  event.target.src;
                         if (src == currentWord) {
                             const rightAnswerIcon = document.createElement('DIV');
@@ -33,7 +33,7 @@ export default function startButton() {
                             event.target.style.opacity = '0.5';
                             card.classList.add('unactive');
                             allAudio = document.querySelectorAll('.active');
-                            randomizer(allAudio.length);
+                            randomizer(allAudio.length, mode);
                         } else {
                             const wrongAnswerIcon = document.createElement('DIV');
                             wrongAnswerIcon.classList.add('wrong-answer-icon');
@@ -49,23 +49,25 @@ export default function startButton() {
             currentAudio.play();
         });
 
-        function randomizer(max) {
-              let rand = Math.random() * max,
-                  randomAudio = Math.floor(rand),
-                  success;
-              if (allAudio[randomAudio] == undefined) {
-                  if (document.querySelector('.wrong-answer-icon') !== null) {
-                      success = false;
-                  } else {
-                      success = true;
-                  }
-                  result(success);
-              } else {
-                  currentAudio = allAudio[randomAudio];
-                  allAudio[randomAudio].play();
-                  currentAudio.classList.remove('active');
-                  currentWord = currentAudio.previousSibling.previousSibling.previousSibling.previousSibling.src;
-              }
-          }
+        function randomizer(max, mode) {
+            if (mode == 'GAME') {
+                let rand = Math.random() * max,
+                    randomAudio = Math.floor(rand),
+                    success;
+                if (allAudio[randomAudio] == undefined) {
+                    if (document.querySelector('.wrong-answer-icon') !== null) {
+                        success = false;
+                    } else {
+                        success = true;
+                    }
+                    result(success);
+                } else {
+                    currentAudio = allAudio[randomAudio];
+                    allAudio[randomAudio].play();
+                    currentAudio.classList.remove('active');
+                    currentWord = currentAudio.previousSibling.previousSibling.previousSibling.previousSibling.src;
+                }
+            }
+        }
     }
 }
