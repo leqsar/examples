@@ -27,7 +27,8 @@ export default function changeMode() {
                 cardContainers = document.querySelectorAll('.card-container'),
                 wordContainers = document.querySelectorAll('.word-wrap'),
                 startGameButton = document.querySelector('.game-button'),
-                repeatButton = document.querySelector('.repeat-button');
+                repeatButton = document.querySelector('.repeat-button'),
+                progressBar = document.querySelector('.progress-bar-wrap');
             slider.style.marginLeft = '2px';
             switchElement.classList.remove('switch-element-game-mode');
             nameOfMode.classList.remove('switch-text-game-mode');
@@ -42,8 +43,9 @@ export default function changeMode() {
                 cardContainer.style.height = '260px';
             });
             if (startGameButton !== null) {
-              startGameButton.style.display = 'none';
-              repeatButton.style.visibility = 'hidden';
+                startGameButton.style.display = 'none';
+                repeatButton.style.visibility = 'hidden';
+                progressBar.style.visibility = 'hidden';
             }
         } else {
             slider.style.transitionDuration = '250ms';
