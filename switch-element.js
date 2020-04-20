@@ -28,7 +28,9 @@ export default function changeMode() {
                 wordContainers = document.querySelectorAll('.word-wrap'),
                 startGameButton = document.querySelector('.game-button'),
                 repeatButton = document.querySelector('.repeat-button'),
-                progressBar = document.querySelector('.progress-bar-wrap');
+                progressBar = document.querySelector('.progress-bar-wrap'),
+                inactiveImgs = document.querySelectorAll('.unactive IMG'),
+                inactiveCards = document.querySelectorAll('.unactive');
             slider.style.marginLeft = '2px';
             switchElement.classList.remove('switch-element-game-mode');
             nameOfMode.classList.remove('switch-text-game-mode');
@@ -42,6 +44,14 @@ export default function changeMode() {
             cardContainers.forEach(cardContainer => {
                 cardContainer.style.height = '260px';
             });
+            inactiveCards.forEach(unactiveCard => {
+                unactiveCard.classList.remove('unactive');
+            });
+            inactiveImgs.forEach(inactiveImg => {
+                inactiveImg.style.opacity = '1';
+            });
+
+
             if (startGameButton !== null) {
                 startGameButton.style.display = 'none';
                 repeatButton.style.visibility = 'hidden';
