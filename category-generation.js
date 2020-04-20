@@ -18,10 +18,10 @@ export default function categoryGeneration () {
             generation(cards.actionB);
             break;
         case 'Action (set C)':
-
+            generation(cards.actionC);
             break;
         case 'Adjective':
-
+            generation(cards.adjective);
             break;
         case 'Animal (set A)':
             generation(cards.animalA);

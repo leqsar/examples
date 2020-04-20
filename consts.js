@@ -99,6 +99,106 @@ const cards = {
         audioSrc: 'audio/swim.mp3'
       }
     ],
+    actionC: [
+      {
+        word: 'sleep',
+        translation: 'спать',
+        image: 'img/sleep.jpg',
+        audioSrc: 'audio/sleep.mp3'
+      },
+      {
+        word: 'eat',
+        translation: 'кушать',
+        image: 'img/eat.jpg',
+        audioSrc: 'audio/eat.mp3'
+      },
+      {
+        word: 'listen',
+        translation: 'слушать',
+        image: 'img/listen.jpg',
+        audioSrc: 'audio/listen.mp3'
+      },
+      {
+        word: 'read',
+        translation: 'читать',
+        image: 'img/read.jpg',
+        audioSrc: 'audio/read.mp3'
+      },
+      {
+        word: 'drink',
+        translation: 'пить',
+        image: 'img/drink.jpg',
+        audioSrc: 'audio/drink.mp3'
+      },
+      {
+        word: 'bathe',
+        translation: 'принимать ванну',
+        image: 'img/bathe.jpg',
+        audioSrc: 'audio/bathe.mp3'
+      },
+      {
+        word: 'sit',
+        translation: 'сидеть',
+        image: 'img/sit.jpg',
+        audioSrc: 'audio/sit.mp3'
+      },
+      {
+        word: 'climb',
+        translation: 'взбираться',
+        image: 'img/climb.jpg',
+        audioSrc: 'audio/climb.mp3'
+      }
+    ],
+    adjective: [
+      {
+        word: 'deep',
+        translation: 'глубокий',
+        image: 'img/deep.jpg',
+        audioSrc: 'audio/deep.mp3'
+      },
+      {
+        word: 'high',
+        translation: 'высокий',
+        image: 'img/high.jpg',
+        audioSrc: 'audio/high.mp3'
+      },
+      {
+        word: 'wet',
+        translation: 'влажный',
+        image: 'img/wet.jpg',
+        audioSrc: 'audio/wet.mp3'
+      },
+      {
+        word: 'dry',
+        translation: 'сухой',
+        image: 'img/dry.jpg',
+        audioSrc: 'audio/dry.mp3'
+      },
+      {
+        word: 'loud',
+        translation: 'громкий',
+        image: 'img/loud.jpg',
+        audioSrc: 'audio/loud.mp3'
+      },
+      {
+        word: 'smart',
+        translation: 'умный',
+        image: 'img/smart.jpg',
+        audioSrc: 'audio/smart.mp3'
+      },
+      {
+        word: 'cold',
+        translation: 'холодный',
+        image: 'img/cold.jpg',
+        audioSrc: 'audio/cold.mp3'
+      },
+      {
+        word: 'hot',
+        translation: 'горячий',
+        image: 'img/hot.jpg',
+        audioSrc: 'audio/hot.mp3'
+      }
+    ],
     animalA: [
       {
         word: 'cat',
