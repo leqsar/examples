@@ -21,8 +21,9 @@ export default function startButton() {
             randomizer(allAudio.length, mode);
             cards.forEach(card => {
                 card.addEventListener('click', event => {
+                    let pressedStartButton = startButton.style.display == 'none' ? false : true;
                     mode = document.querySelector('.switch-element-text').textContent;
-                    if ((mode == 'GAME') && (!card.classList.contains('unactive'))) {
+                    if ((mode == 'GAME') && (!card.classList.contains('unactive') && !pressedStartButton)) {
                         progressBar.style.visibility = 'visible';
                         let src =  event.target.src;
                         if (src == currentWord) {

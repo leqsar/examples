@@ -1,5 +1,5 @@
 import turnOnGameMode from './gameMode.js';
-
+import trainMode from './train-mode.js';
 
 export default function changeMode() {
     const switchElement = document.querySelector('.switch-element'),
@@ -23,38 +23,7 @@ export default function changeMode() {
         nameOfMode.textContent = `${mode.toUpperCase()}`;
         localStorage.setItem('mode', mode);
         if (mode == 'train') {
-            const allImages = document.querySelectorAll('.card IMG'),
-                cardContainers = document.querySelectorAll('.card-container'),
-                wordContainers = document.querySelectorAll('.word-wrap'),
-                startGameButton = document.querySelector('.game-button'),
-                repeatButton = document.querySelector('.repeat-button'),
-                progressBar = document.querySelector('.progress-bar-wrap'),
-                inactiveImgs = document.querySelectorAll('.unactive IMG'),
-                inactiveCards = document.querySelectorAll('.unactive');
-            slider.style.marginLeft = '2px';
-            switchElement.classList.remove('switch-element-game-mode');
-            nameOfMode.classList.remove('switch-text-game-mode');
-            menu.classList.remove('burger-menu-game-mode');
-            allCards.forEach(item => {
-                item.classList.remove('card-game-mode');
-            });
-            wordContainers.forEach(wordContainer => {
-                wordContainer.style.display = 'flex';
-            });
-            cardContainers.forEach(cardContainer => {
-                cardContainer.style.height = '260px';
-            });
-            inactiveCards.forEach(unactiveCard => {
-                unactiveCard.classList.remove('unactive');
-            });
-            inactiveImgs.forEach(inactiveImg => {
-                inactiveImg.style.opacity = '1';
-            });
-            if (startGameButton !== null) {
-                startGameButton.style.display = 'none';
-                repeatButton.style.visibility = 'hidden';
-                progressBar.style.visibility = 'hidden';
-            }
+            trainMode();
         } else {
             slider.style.transitionDuration = '250ms';
             addGameModeStyles();
