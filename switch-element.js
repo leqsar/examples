@@ -21,7 +21,7 @@ export default function changeMode() {
     switchElement.addEventListener('click', () => {
         mode = mode == 'train' ? 'game' : 'train';
         nameOfMode.textContent = `${mode.toUpperCase()}`;
-        sessionStorage.setItem('mode', mode);
+        localStorage.setItem('mode', mode);
         if (mode == 'train') {
             const allImages = document.querySelectorAll('.card IMG'),
                 cardContainers = document.querySelectorAll('.card-container'),

@@ -22,6 +22,7 @@ export default function startButton() {
             cards.forEach(card => {
                 card.addEventListener('click', event => {
                     progressBar.style.visibility = 'visible';
+                    console.log(mode);
                     if ((mode == 'GAME') && (!card.classList.contains('unactive'))) {
                         let src =  event.target.src;
                         if (src == currentWord) {
