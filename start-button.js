@@ -1,4 +1,5 @@
 import cards from './consts.js';
+import randomizer from './randomizer.js';
 
 export default function startButton() {
     let currentAudio, currentWord,
@@ -46,14 +47,5 @@ export default function startButton() {
         repeatButton.addEventListener('click', () => {
             currentAudio.play();
         });
-    }
-
-    function randomizer(max) {
-        let rand = Math.random() * max,
-            randomAudio = Math.floor(rand);
-        currentAudio = allAudio[randomAudio];
-        allAudio[randomAudio].play();
-        currentAudio.classList.remove('active');
-        currentWord = currentAudio.previousSibling.previousSibling.previousSibling.previousSibling.src;
     }
 }

@@ -328,6 +328,16 @@ a {
   background-color: red;
 }
 
+.result-image-wrap {
+  display: flex;
+  position: absolute;
+  left: 30vw;
+  top: 30vw;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+
 
 /*/////////////////*/
 
