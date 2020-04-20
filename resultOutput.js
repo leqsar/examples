@@ -3,7 +3,8 @@ export default function result(success) {
         resultImage = document.querySelector('.result-image-wrap IMG'),
         main = document.querySelector('MAIN'),
         successAudio = document.querySelector('.success-sound'),
-        failureAudio = document.querySelector('.failure-sound');
+        failureAudio = document.querySelector('.failure-sound'),
+        repeatButton = document.querySelector('.repeat-button')
     if (success) {
         resultImage.src = 'img/success.jpg';
         successAudio.play();
@@ -12,6 +13,7 @@ export default function result(success) {
         failureAudio.play();
     }
     main.style.visibility = 'hidden';
+    repeatButton.style.visibility = 'hidden';
     setTimeout(() => {
         resultImageContainer.style.visibility = 'visible';
     }, 500);

@@ -7,7 +7,7 @@ export default function changeMode() {
         allCards = document.querySelectorAll('.category'),
         menu = document.querySelector('.burger-menu-wrap'),
         burgerIcon = document.querySelectorAll('LI');
-    let mode = localStorage.getItem('mode') == null ? 'train' : sessionStorage.getItem('mode'),
+    let mode = localStorage.getItem('mode') == null ? 'train' : localStorage.getItem('mode'),
         nameOfMode = document.createElement('P');
     nameOfMode.textContent = `${mode.toUpperCase()}`;
     nameOfMode.classList.add('switch-element-text');
