@@ -3,13 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title>Movie search</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../../node_modules/swiper/css/swiper.min.css">
+    <script src="https://kit.fontawesome.com/80c83aa6e5.js" crossorigin="anonymous"></script>
   </head>
   <body>
       <header>
+        <h1>MovieSearch</h1>
       </header>
       <main>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+							<div class="film">1</div>
+							<div class="film">2</div>
+							<div class="film">3</div>
+							<div class="film">4</div>
+						</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-scrollbar"></div>
+        </div>
       </main>
+      <footer>
+        <p>RS School 2020q1</p>
+        <a href="https://github.com/leqsar"><i class="fab fa-github"></i>leqsar</a>
+      </footer>
       <script src="../app/index.js" charset="utf-8"></script>
+      <script src="../../node_modules/swiper/js/swiper.min.js"></script>
+			<script src="../app/swiper.js"></script>
   </body>
 </html>
