@@ -1,4 +1,4 @@
-var mySwiper = new Swiper ('.swiper-container', {
+export var mySwiper = new Swiper ('.swiper-container', {
 	 direction: 'horizontal',
 	 loop: true,
 	 pagination: {
