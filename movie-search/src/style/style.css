@@ -101,6 +101,7 @@ main {
 .film-title {
 	height: 21px;
 	overflow: hidden;
+	color: black;
 }
 
 .film-title,

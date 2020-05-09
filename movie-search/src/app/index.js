@@ -19,9 +19,7 @@ clearTextArea.addEventListener('click', () => {
 
 form.addEventListener('submit', event => {
 	while (swiperWrapper.firstChild !== null) {
-
 		swiperWrapper.removeChild(swiperWrapper.firstChild);
-		console.log(swiperWrapper.firstChild !== null);
 	}
 	counter = 0;
 	event.preventDefault();
@@ -57,7 +55,7 @@ async function create(film) {
 	let rateResponse = await fetch(rateUrl);
 	let rateData = await rateResponse.json();
 	const filmContainer = `<div class="swiper-slide">
-								<p class="film-title">${film.Title}</p>
+								<a class="film-title" href="https://www.imdb.com/title/${film.imdbID}/videogallery/?ref_=tt_pv_vi_sm">${film.Title}</a>
 								<img class="film-poster" src="${film.Poster}">
 								<p class="film-year">${film.Year}</p>
 								<p class="film-rate">${rateData.imdbRating}</p>
