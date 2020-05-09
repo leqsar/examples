@@ -4,7 +4,8 @@ const clearTextArea = document.querySelector('.clear-button'),
 	textArea = document.querySelector('.textarea'),
 	form = document.querySelector('.search'),
 	loader = document.querySelector('.loader'),
-	swiperWrapper = document.querySelector('.swiper-wrapper');
+	swiperWrapper = document.querySelector('.swiper-wrapper'),
+	errorText = document.querySelector('.error');
 const apikey = '18edca94';
 let filmsArr = [],
 	counter = 0,
@@ -33,12 +34,16 @@ async function getMovieTitle(keyword, page) {
 	loader.style.display = 'block';
 	let response = await fetch(url, {method: 'POST'});
 	let data = await response.json();
-	console.log(data);
 	loader.style.display = 'none';
-	let filmData = data.Search;
-	filmData.forEach((film, i) => {
-		create(film);
-	});
+	if (data.Response === 'False') {
+		errorText.textContent = `${data.Error}`;
+	} else {
+		loader.style.display = 'none';
+		let filmData = data.Search;
+		filmData.forEach((film, i) => {
+			create(film);
+		});
+	}
 }
 
 async function create(film) {

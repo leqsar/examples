@@ -72,6 +72,14 @@ main {
 	border-style: solid;
 }
 
+.error-container {
+	width: 200px;
+	margin: 20px auto;
+	text-align: center;
+	font-size: 20px;
+	color: #7F0505;
+}
+
 .swiper-container {
   width: 1000px;
 	height: 600px;
