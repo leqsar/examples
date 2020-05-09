@@ -5,8 +5,8 @@ const clearTextArea = document.querySelector('.clear-button'),
 	form = document.querySelector('.search'),
 	loader = document.querySelector('.loader'),
 	swiperWrapper = document.querySelector('.swiper-wrapper'),
-	errorText = document.querySelector('.error');
-const apikey = '18edca94';
+	errorText = document.querySelector('.error'),
+	apikey = '18edca94';
 let filmsArr = [],
 	counter = 0,
 	keyword;
@@ -50,7 +50,7 @@ async function create(film) {
 	const rateUrl = `https://www.omdbapi.com/?i=${film.imdbID}&apikey=18edca94`;
 	let rateResponse = await fetch(rateUrl);
 	let rateData = await rateResponse.json();
-	const filmContainer = `<div class="film">
+	const filmContainer = `<div class="swiper-slide">
 								<p class="film-title">${film.Title}</p>
 								<img class="film-poster" src="${film.Poster}">
 								<p class="film-year">${film.Year}</p>
@@ -58,25 +58,6 @@ async function create(film) {
 							</div>`;
 	filmsArr.push(filmContainer);
 	let slide;
-	if ((filmsArr.length === 4) || ((counter === 2) && (filmsArr.length === 2))) {
-		if (filmsArr.length === 2) {
-			slide =
-						`<div class="swiper-slide">
-							${filmsArr[0]}
-							${filmsArr[1]}
-						</div>`;
-		} else {
-			slide =
-						`<div class="swiper-slide">
-							${filmsArr[0]}
-							${filmsArr[1]}
-							${filmsArr[2]}
-							${filmsArr[3]}
-						</div>`;
-		}
-		mySwiper.addSlide(1,slide);
-		mySwiper.update();
-		counter = counter + 1;
-		filmsArr = [];
-	}
+	mySwiper.addSlide(1, filmContainer);
+	mySwiper.update();
 }
