@@ -6,37 +6,43 @@ const clearTextArea = document.querySelector('.clear-button'),
 	loader = document.querySelector('.loader'),
 	swiperWrapper = document.querySelector('.swiper-wrapper'),
 	errorText = document.querySelector('.error'),
-	apikey = '18edca94';
+	translateText = document.querySelector('.translate'),
+	apikey = 'd84e996d';
 let filmsArr = [],
 	counter = 0,
-	keyword;
+	keyword,
+	page = 1;
 
 clearTextArea.addEventListener('click', () => {
 	textArea.value = '';
 });
 
 form.addEventListener('submit', event => {
-	while (swiperWrapper.firstChild) {
+	while (swiperWrapper.firstChild !== null) {
+
 		swiperWrapper.removeChild(swiperWrapper.firstChild);
+		console.log(swiperWrapper.firstChild !== null);
 	}
 	counter = 0;
 	event.preventDefault();
 	keyword = textArea.value;
-	getMovieTitle(keyword, 1);
-});
-
-mySwiper.on('slideChange', function () {
-  console.log('slide changed');
+	getMovieTitle(keyword, page);
 });
 
 async function getMovieTitle(keyword, page) {
-	const url = `https://www.omdbapi.com/?s=${keyword}&page=${page}&apikey=18edca94`;
+	const translateUrl = `https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20200509T152856Z.14ab7d4337bc7092.17700ddb8094d9da104f792e734425d0d1223f2c&text=${keyword}&lang=ru-en`;
+	let translateResponse = await fetch(translateUrl, {method: 'POST'});
+	let translateData = await translateResponse.json();
+	let translation = translateData.text[0];
+	translateText.textContent = `${translation}`;
+	const url = `https://www.omdbapi.com/?s=${translation}&page=${page}&apikey=d84e996d`;
 	loader.style.display = 'block';
 	let response = await fetch(url, {method: 'POST'});
 	let data = await response.json();
 	loader.style.display = 'none';
 	if (data.Response === 'False') {
 		errorText.textContent = `${data.Error}`;
+		loader.style.display = 'none';
 	} else {
 		loader.style.display = 'none';
 		let filmData = data.Search;
@@ -47,7 +53,7 @@ async function getMovieTitle(keyword, page) {
 }
 
 async function create(film) {
-	const rateUrl = `https://www.omdbapi.com/?i=${film.imdbID}&apikey=18edca94`;
+	const rateUrl = `https://www.omdbapi.com/?i=${film.imdbID}&apikey=d84e996d`;
 	let rateResponse = await fetch(rateUrl);
 	let rateData = await rateResponse.json();
 	const filmContainer = `<div class="swiper-slide">
@@ -58,6 +64,6 @@ async function create(film) {
 							</div>`;
 	filmsArr.push(filmContainer);
 	let slide;
-	mySwiper.addSlide(1, filmContainer);
+	mySwiper.appendSlide(filmContainer);
 	mySwiper.update();
 }

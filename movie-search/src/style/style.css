@@ -72,7 +72,8 @@ main {
 	border-style: solid;
 }
 
-.error-container {
+.error-container,
+.translation-container {
 	width: 200px;
 	margin: 20px auto;
 	text-align: center;
