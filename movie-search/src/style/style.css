@@ -151,3 +151,19 @@ footer {
   color: white;
 	font-family: 'DM Mono', monospace;
 }
+
+@media (min-width: 1010px) and (max-width: 1280px) {
+
+}
+
+@media (min-width: 700px) and (max-width: 1010px) {
+	.swiper-container {
+	  width: 95vw;
+		height: 600px;
+		overflow: hidden;
+	}
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+
+}
