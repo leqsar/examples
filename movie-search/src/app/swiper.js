@@ -1,6 +1,5 @@
 export var mySwiper = new Swiper ('.swiper-container', {
 	 direction: 'horizontal',
-	 //loop: true,
 	 pagination: {
 		 el: '.swiper-pagination',
 	 },
@@ -9,5 +8,7 @@ export var mySwiper = new Swiper ('.swiper-container', {
 		 prevEl: '.swiper-button-prev',
 	 },
 	 slidesPerView: 4,
-	 spaceBetween: 30
+	 spaceBetween: 30,
+	 preloadImages: true,
+	 updateOnImagesReady: true
  });
