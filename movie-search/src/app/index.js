@@ -24,6 +24,7 @@ mySwiper.on('slideChange', function () {
 		requestInfo.page++;
 		getMovieData(requestInfo.keyword, requestInfo.page);
 	}
+	console.log(mySwiper.originalParams.slidesPerView);
 });
 
 export {requestInfo};
