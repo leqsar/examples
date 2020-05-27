@@ -39,6 +39,10 @@ const monthes = {
   11: 'December'
 };
 
+if (localStorage.getItem('measurment') === undefined) {
+  localStorage.setItem('measurment', 'cel');
+}
+
 fetch(locationUrl)
   .then((response) => {
     return response.json();
@@ -60,6 +64,7 @@ imageChanger.addEventListener('click', () => {
 });
 
 fareng.addEventListener('click', () => {
+  localStorage.setItem('measurment', 'far');
   toFareng(temperatureToday);
   toFareng(temperatureFeels);
   toFareng(firstDay);
@@ -68,6 +73,7 @@ fareng.addEventListener('click', () => {
 });
 
 celsius.addEventListener('click', () => {
+  localStorage.setItem('measurment', 'cel');
   toCels(temperatureToday);
   toCels(temperatureFeels);
   toCels(firstDay);
@@ -95,19 +101,20 @@ function getWeatherData(location) {
       return response.json();
     })
     .then(data => {
-      console.log(data);
       let newDay;
       let day = data.list[0].dt_txt.substring(8, 10);
+      let measurment = localStorage.getItem('measurment');
+      let tempInCels = Math.floor(data.list[0].main.temp - 273);
+      let tempFeelsInCels = Math.floor(data.list[0].main.feels_like - 273);
       const weather = {
-        temp: Math.floor(data.list[0].main.temp - 273),
-        tempFeels: Math.floor(data.list[0].main.feels_like - 273),
+        temp: measurment === 'cel' ? tempInCels : Math.floor((tempInCels * 9 / 5) + 32),
+        tempFeels: measurment === 'cel' ? tempFeelsInCels : Math.floor((tempFeelsInCels * 9 / 5) + 32),
         wind: data.list[0].wind.speed,
         humidity: data.list[0].main.humidity
       };
       let threeDaysWeather = new Object();
       data.list.forEach((item, index) => {
         newDay = item.dt_txt.substring(8, 10);
-        console.log(newDay);
         if (newDay === day + 1) {
           threeDaysWeather.firstDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;
         }
@@ -118,7 +125,6 @@ function getWeatherData(location) {
           threeDaysWeather.thirdDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;
         }
       });
-      console.log(day);
       showAllDetails(location, weather, threeDaysWeather);
     })
 }
