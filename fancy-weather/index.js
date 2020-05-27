@@ -5,7 +5,7 @@ const latitude = document.querySelector('.map-container__coordinates__lat');
 const longtitude = document.querySelector('.map-container__coordinates__long');
 const region = document.querySelector('.weather__user-info__location');
 const temperatureToday = document.querySelector('.weather__today-info__temperature');
-const temperatureFeels = document.querySelector('.weather__feels');
+const temperatureFeels = document.querySelector('.weather__feels__temp');
 const windToday = document.querySelector('.weather__today-data__wind');
 const humidityToday = document.querySelector('.weather__today-data__humidity');
 const firstDay = document.querySelector('.weather-week__first-day__temperature P');
@@ -60,8 +60,19 @@ imageChanger.addEventListener('click', () => {
 });
 
 fareng.addEventListener('click', () => {
+  toFareng(temperatureToday);
+  toFareng(temperatureFeels);
+  toFareng(firstDay);
+  toFareng(secondDay);
+  toFareng(thirdDay);
+});
 
-})
+function toFareng(tempContainer) {
+  let celTemperature = tempContainer.textContent;
+  let number = celTemperature.substring(0, celTemperature.length - 1);
+  let farTemperature = Math.floor((number * 9 / 5) + 32);
+  tempContainer.textContent = `${farTemperature}°`;
+}
 
 function getWeatherData(location) {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longtitude}&appid=f10034f045888292e6951fae8b6f832a`)
@@ -105,13 +116,13 @@ function showAllDetails(location, weather, threeDaysWeather) {
   latitude.textContent = `Latitude: ${degreesLa}° ${minutesLa}'`;
   longtitude.textContent = `Longtitude: ${degreesLong}° ${minutesLong}'`;
   region.textContent = `${location.city}, ${location.country}`;
-  temperatureToday.textContent = `${weather.temp}`;
-  temperatureFeels.textContent = `FEELS LIKE: ${weather.tempFeels}`;
+  temperatureToday.textContent = `${weather.temp}°`;
+  temperatureFeels.textContent = `${weather.tempFeels}°`;
   windToday.textContent = `WIND: ${weather.wind} m/s`;
   humidityToday.textContent = `HUMIDITY: ${weather.humidity}%`;
-  firstDay.textContent = `${threeDaysWeather.firstDayTemp}`;
-  secondDay.textContent = `${threeDaysWeather.secondDayTemp}`;
-  thirdDay.textContent = `${threeDaysWeather.thirdDayTemp}`;
+  firstDay.textContent = `${threeDaysWeather.firstDayTemp}°`;
+  secondDay.textContent = `${threeDaysWeather.secondDayTemp}°`;
+  thirdDay.textContent = `${threeDaysWeather.thirdDayTemp}°`;
   mapSet(location.latitude, location.longtitude);
 }
 
