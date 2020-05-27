@@ -1,0 +1,203 @@
+body {
+  max-width: 1440px;
+  max-height: 800px;
+  margin: 0 auto;
+  color: white;
+  background-color: gray;
+}
+
+h1, p, li, ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+header {
+  display: flex;
+}
+
+main {
+  display: flex;
+  width: 100%;
+}
+
+.settings {
+  display: flex;
+  margin-left: 93px;
+  margin-top: 40px;
+  height: 44px;
+}
+
+.settings__language-changer {
+  display: flex;
+  margin-left: 10px;
+}
+
+.settings__language-changer p,
+.settings__temperature-changer__lang,
+.settings__image-changer,
+.search-container__voice-search {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(94, 94, 94, 0.3);
+  justify-content: center;
+  align-items: center;
+  border-width: 2px;
+  border-color: white;
+}
+
+.search-container__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 101px;
+  height: 44px;
+}
+
+.settings__image-changer {
+  border-radius: 3px;
+}
+
+.settings__language-changer p:first-child,
+.settings__temperature-changer__lang:first-child {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.settings__language-changer p:last-child,
+.settings__temperature-changer__lang:last-child {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.settings__lang_active,
+.settings__language-changer_active {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(90, 90, 90, 0.3);
+}
+
+.settings__lang_active {
+  left: 454px;
+}
+
+.settings__language-changer_active {
+  left: 266px;
+}
+
+.settings__temperature-changer {
+  display: flex;
+  margin-left: 10px;
+}
+
+.search-container__textarea {
+  width: 274px;
+  height: 44px;
+}
+
+.search-container {
+  display: flex;
+  margin-left: 659px;
+  margin-top: 44px;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  margin-top: 57px;
+  margin-left: 90px;
+}
+
+.weather__user-info__location {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 44px;
+  line-height: 54px;
+  color: #FFFFFF;
+}
+
+.weather__user-info__time {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  color: #FFFFFF;
+}
+
+.weather__today-info {
+  display: flex;
+}
+
+.weather__today-info__temperature {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 306px;
+  line-height: 373px;
+  color: #FFFFFF;
+}
+
+.weather__today-data {
+  margin-left: 92px;
+  margin-top: 154px;
+  width: 200px;
+}
+
+.weather__today-data li {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 37px;
+  color: #FFFFFF;
+}
+
+.weather-week {
+  display: flex;
+  margin-top: 78px;
+}
+
+.weather-week__day {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 27px;
+  color: #FFFFFF;
+}
+
+.weather-week__second-day,
+.weather-week__third-day {
+  margin-left: 52px;
+}
+
+.weather-week__temperature {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 80px;
+  line-height: 98px;
+}
+
+#map {
+  margin-left: 288px;
+  border-radius: 200px;
+  margin-top: 100px;
+}
+
+.map-container__coordinates__lat,
+.map-container__coordinates__long {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: right;
+}

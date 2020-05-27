@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Fancy-weather</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.1/mapbox-gl.css' rel='stylesheet' />
+  </head>
+  <body>
+      <header>
+        <div class="settings">
+          <div class="settings__image-changer">
+
+          </div>
+          <div class="settings__language-changer">
+            <p>EN</p>
+            <p>RU</p>
+            <p>BE</p>
+            <p class="settings__language-changer_active"></p>
+          </div>
+          <div class="settings__temperature-changer">
+            <div class="settings__temperature-changer__lang far"><span>°F</span></div>
+            <div class="settings__temperature-changer__lang cel"><span>°С</span></div>
+            <div class="settings__lang_active"></div>
+          </div>
+        </div>
+        <form class="search-container" action="index.html" method="post">
+          <input type="search" class="search-container__textarea" name="" value="">
+          <button type="button" class="search-container__voice-search" name="button">
+
+          </button>
+          <button type="button" class="search-container__search" name="button">
+            <p>SEARCH</p>
+          </button>
+        </form>
+      </header>
+      <main>
+        <div class="weather">
+          <div class="weather__user-info">
+            <h1 class="weather__user-info__location"></h1>
+            <p class="weather__user-info__time"></p>
+          </div>
+          <div class="weather__today-info">
+            <p class="weather__today-info__temperature"></p>
+            <ul class="weather__today-data">
+              <li>OVERCAST</li>
+              <li class="weather__feels"></li>
+              <li class="weather__today-data__wind"></li>
+              <li class="weather__today-data__humidity"></li>
+            </ul>
+            <div class="weather__today-info__icon">
+              <img src="" alt="">
+            </div>
+          </div>
+          <div class="weather-week">
+            <div class="weather-week__first-day">
+              <p class="weather-week__day">TUESDAY</p>
+              <div class="weather-week__first-day__temperature">
+                <p class="weather-week__temperature">7</p>
+                <img src="" alt="">
+              </div>
+            </div>
+            <div class="weather-week__second-day">
+              <p class="weather-week__day">TUESDAY</p>
+              <div class="weather-week__second-day__temperature">
+                <p class="weather-week__temperature">6</p>
+                <img src="" alt="">
+              </div>
+            </div>
+            <div class="weather-week__second-day">
+              <p class="weather-week__day">WEDNESDAY</p>
+              <div class="weather-week__third-day__temperature">
+                <p class="weather-week__temperature">3</p>
+                <img src="" alt="">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="map-container">
+          <div class="map-container__map">
+            <div id='map' style='width: 400px; height: 400px;'></div>
+          </div>
+          <div class="map-container__coordinates">
+            <p class="map-container__coordinates__lat">Latitude: </p>
+            <p class="map-container__coordinates__long">Longtitude: </p>
+          </div>
+        </div>
+      </main>
+      <script src="./dist/bundle.js" charset="utf-8"></script>
+  </body>
+</html>
