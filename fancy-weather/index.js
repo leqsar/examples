@@ -67,11 +67,26 @@ fareng.addEventListener('click', () => {
   toFareng(thirdDay);
 });
 
+celsius.addEventListener('click', () => {
+  toCels(temperatureToday);
+  toCels(temperatureFeels);
+  toCels(firstDay);
+  toCels(secondDay);
+  toCels(thirdDay);
+});
+
 function toFareng(tempContainer) {
   let celTemperature = tempContainer.textContent;
   let number = celTemperature.substring(0, celTemperature.length - 1);
   let farTemperature = Math.floor((number * 9 / 5) + 32);
   tempContainer.textContent = `${farTemperature}°`;
+}
+
+function toCels(tempContainer) {
+  let farTemperature = tempContainer.textContent;
+  let number = farTemperature.substring(0, farTemperature.length - 1);
+  let celTemperature = Math.floor((number - 32) * 5 / 9);
+  tempContainer.textContent = `${celTemperature}°`;
 }
 
 function getWeatherData(location) {
