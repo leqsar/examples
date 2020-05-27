@@ -74,12 +74,9 @@ main {
   border-bottom-right-radius: 3px;
 }
 
-.settings__lang_active,
-.settings__language-changer_active {
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  background-color: rgba(90, 90, 90, 0.3);
+.active {
+	box-shadow: inset rgba(255,255,255,0.2) 4px  4px 9px 2.5px,
+	            inset rgba(0,0,0,0.5)      -4px -4px 9px 2.5px;
 }
 
 .settings__lang_active {

@@ -41,6 +41,9 @@ const monthes = {
 
 if (localStorage.getItem('measurment') === undefined) {
   localStorage.setItem('measurment', 'cel');
+  celsius.classList.add('active');
+} else {
+  fareng.classList.add('active');
 }
 
 fetch(locationUrl)
@@ -64,21 +67,29 @@ imageChanger.addEventListener('click', () => {
 });
 
 fareng.addEventListener('click', () => {
-  localStorage.setItem('measurment', 'far');
-  toFareng(temperatureToday);
-  toFareng(temperatureFeels);
-  toFareng(firstDay);
-  toFareng(secondDay);
-  toFareng(thirdDay);
+  if (localStorage.getItem('measurment') === 'cel') {
+    celsius.classList.remove('active');
+    fareng.classList.add('active');
+    localStorage.setItem('measurment', 'far');
+    toFareng(temperatureToday);
+    toFareng(temperatureFeels);
+    toFareng(firstDay);
+    toFareng(secondDay);
+    toFareng(thirdDay);
+  }
 });
 
 celsius.addEventListener('click', () => {
-  localStorage.setItem('measurment', 'cel');
-  toCels(temperatureToday);
-  toCels(temperatureFeels);
-  toCels(firstDay);
-  toCels(secondDay);
-  toCels(thirdDay);
+  if (localStorage.getItem('measurment') === 'far') {
+    fareng.classList.remove('active');
+    celsius.classList.add('active');
+    localStorage.setItem('measurment', 'cel');
+    toCels(temperatureToday);
+    toCels(temperatureFeels);
+    toCels(firstDay);
+    toCels(secondDay);
+    toCels(thirdDay);
+  }
 });
 
 function toFareng(tempContainer) {
