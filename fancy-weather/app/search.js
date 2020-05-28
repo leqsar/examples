@@ -14,13 +14,14 @@ export default function search() {
       })
       .then((data) => {
         console.log(data);
-        const location = {
-          latitude: data.results[0].geometry.lat,
-          longtitude: data.results[0].geometry.lng,
-          city: data.results[0].formatted,
-          country: ``
-        };
         if (data.results.length !== 0) {
+          error.style.visibility = 'hidden';
+          const location = {
+            latitude: data.results[0].geometry.lat,
+            longtitude: data.results[0].geometry.lng,
+            city: data.results[0].formatted,
+            country: ``
+          };
           getWeatherData(location);
         } else {
           const error = document.querySelector('.error-container__error');
