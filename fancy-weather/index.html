@@ -10,9 +10,7 @@
   <body class="body">
       <header>
         <div class="settings">
-          <div class="settings__image-changer">
-
-          </div>
+          <div class="settings__image-changer"></div>
           <div class="settings__language-changer">
             <p>EN</p>
             <p>RU</p>
@@ -24,13 +22,11 @@
           </div>
         </div>
         <form class="search-container" action="index.html" method="post">
-          <input type="search" class="search-container__textarea" name="" value="">
+          <input type="text" class="search-container__textarea" name="" value="">
           <button type="button" class="search-container__voice-search" name="button">
 
           </button>
-          <button type="button" class="search-container__search" name="button">
-            <p>SEARCH</p>
-          </button>
+          <input class="search-container__button" type="submit" value="Search">
         </form>
       </header>
       <main>
@@ -83,6 +79,9 @@
             <p class="map-container__coordinates__lat">Latitude: </p>
             <p class="map-container__coordinates__long">Longtitude: </p>
           </div>
+        </div>
+        <div class="error-container">
+          <p class="error-container__error"></p>
         </div>
       </main>
       <script src="./dist/bundle.js" charset="utf-8"></script>

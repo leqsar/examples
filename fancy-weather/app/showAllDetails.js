@@ -8,7 +8,11 @@ export default function showAllDetails(location, weather, threeDaysWeather) {
   const minutesLong = Math.floor((location.longtitude - degreesLong) * 60);
   latitude.textContent = `Latitude: ${degreesLa}° ${minutesLa}'`;
   longtitude.textContent = `Longtitude: ${degreesLong}° ${minutesLong}'`;
-  region.textContent = `${location.city}, ${location.country}`;
+  if (location.country === ``) {
+    region.textContent = `${location.city}`;
+  } else {
+    region.textContent = `${location.city}, ${location.country}`;
+  }
   temperatureToday.textContent = `${weather.temp}°`;
   temperatureFeels.textContent = `${weather.tempFeels}°`;
   windToday.textContent = `WIND: ${weather.wind} m/s`;

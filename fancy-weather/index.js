@@ -3,6 +3,7 @@ import changeBackground from './app/changeBackground.js';
 import clocks from './app/clocks.js';
 import getWeatherData from './app/getWeatherData.js';
 import getLocationInfo from './app/getLocationInfo.js';
+import search from './app/search.js';
 import {temperatureToday, temperatureFeels, firstDay, secondDay, thirdDay, windToday, humidityToday, latitude, longtitude, region} from './app/consts.js';
 
 const imageChanger = document.querySelector('.settings__image-changer');
@@ -16,8 +17,9 @@ if (localStorage.getItem('measurment') === undefined) {
   fareng.classList.add('active');
 }
 
+search();
 convertation();
 changeBackground();
-clocks();
+clocks(new Date());
 getLocationInfo();
-imageChanger.addEventListener('click', changeBackgroud);
+imageChanger.addEventListener('click', changeBackground);
