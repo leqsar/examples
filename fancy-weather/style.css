@@ -3,7 +3,9 @@ body {
   max-height: 800px;
   margin: 0 auto;
   color: white;
-  background-color: gray;
+  /*background-color: gray;*/
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 h1, p, li, ul {
@@ -43,7 +45,7 @@ main {
   display: flex;
   width: 44px;
   height: 44px;
-  background-color: rgba(94, 94, 94, 0.3);
+  background-color: rgba(94, 94, 94, 0.4);
   justify-content: center;
   align-items: center;
   border-width: 2px;
@@ -108,6 +110,7 @@ main {
   flex-direction: column;
   margin-top: 57px;
   margin-left: 90px;
+  background-color: rgba(94, 94, 94, 0.4);
 }
 
 .weather__user-info__location {
@@ -173,6 +176,13 @@ main {
 .weather-week__second-day,
 .weather-week__third-day {
   margin-left: 52px;
+}
+
+.weather-week__second-day,
+.weather-week__third-day,
+.weather-week__first-day {
+  width: 160px;
+  overflow: hidden;
 }
 
 .weather-week__temperature {

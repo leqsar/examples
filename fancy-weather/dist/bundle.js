@@ -86,14 +86,135 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./app/changeBackground.js":
+/*!*********************************!*\
+  !*** ./app/changeBackground.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return changeBackground; });\nfunction changeBackground() {\n  const body = document.querySelector('.body');\n  fetch('https://api.unsplash.com/photos/random?orientation=landscape&per_page=1&query=nature&client_id=3N2uDFZAUtzO3OU5SbiY_I0J9UGJ5Uole62NUmAvLic').then(response => {\n    return response.json();\n  }).then(data => {\n    console.log(data);\n    body.style.backgroundImage = `url(${data.urls.regular})`;\n  });\n}\n\n//# sourceURL=webpack:///./app/changeBackground.js?");
+
+/***/ }),
+
+/***/ "./app/clocks.js":
+/*!***********************!*\
+  !*** ./app/clocks.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return clocks; });\n/* harmony import */ var _consts_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./consts.js */ \"./app/consts.js\");\n\nfunction clocks() {\n  let timeNode = document.querySelector('.weather__user-info__time');\n\n  function getCurrentTimeString() {\n    return new Date().toTimeString().replace(/ .*/, '');\n  }\n\n  setInterval(function () {\n    let date = new Date();\n    const dayNumber = date.getDay();\n    const monthNumber = date.getMonth();\n    const day = date.getDate();\n    timeNode.textContent = `${_consts_js__WEBPACK_IMPORTED_MODULE_0__[\"days\"][dayNumber]} ${day} ${_consts_js__WEBPACK_IMPORTED_MODULE_0__[\"monthes\"][monthNumber]} ${getCurrentTimeString()}`;\n  }, 1000);\n}\n\n//# sourceURL=webpack:///./app/clocks.js?");
+
+/***/ }),
+
+/***/ "./app/consts.js":
+/*!***********************!*\
+  !*** ./app/consts.js ***!
+  \***********************/
+/*! exports provided: temperatureToday, temperatureFeels, firstDay, secondDay, thirdDay, windToday, humidityToday, latitude, longtitude, region, days, monthes */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"temperatureToday\", function() { return temperatureToday; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"temperatureFeels\", function() { return temperatureFeels; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"firstDay\", function() { return firstDay; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"secondDay\", function() { return secondDay; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"thirdDay\", function() { return thirdDay; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"windToday\", function() { return windToday; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"humidityToday\", function() { return humidityToday; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"latitude\", function() { return latitude; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"longtitude\", function() { return longtitude; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"region\", function() { return region; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"days\", function() { return days; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"monthes\", function() { return monthes; });\nconst latitude = document.querySelector('.map-container__coordinates__lat');\nconst longtitude = document.querySelector('.map-container__coordinates__long');\nconst region = document.querySelector('.weather__user-info__location');\nconst temperatureToday = document.querySelector('.weather__today-info__temperature');\nconst temperatureFeels = document.querySelector('.weather__feels__temp');\nconst windToday = document.querySelector('.weather__today-data__wind');\nconst humidityToday = document.querySelector('.weather__today-data__humidity');\nconst firstDay = document.querySelector('.weather-week__first-day__temperature P');\nconst secondDay = document.querySelector('.weather-week__second-day__temperature P');\nconst thirdDay = document.querySelector('.weather-week__third-day__temperature P');\nconst days = {\n  1: 'Monday',\n  2: 'Tueday',\n  3: 'Wednesday',\n  4: 'Thursday',\n  5: 'Friday',\n  6: 'Saturday',\n  7: 'Sunday'\n};\nconst monthes = {\n  0: 'January',\n  1: 'February',\n  2: 'March',\n  3: 'April',\n  4: 'May',\n  5: 'June',\n  6: 'July',\n  7: 'August',\n  8: 'September',\n  9: 'October',\n  10: 'November',\n  11: 'December'\n};\n\n\n//# sourceURL=webpack:///./app/consts.js?");
+
+/***/ }),
+
+/***/ "./app/convertation.js":
+/*!*****************************!*\
+  !*** ./app/convertation.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return convertation; });\n/* harmony import */ var _toFareng_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./toFareng.js */ \"./app/toFareng.js\");\n/* harmony import */ var _toCels_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./toCels.js */ \"./app/toCels.js\");\n/* harmony import */ var _consts_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./consts.js */ \"./app/consts.js\");\n\n\n\nfunction convertation() {\n  const fareng = document.querySelector('.far');\n  const celsius = document.querySelector('.cel');\n  fareng.addEventListener('click', () => {\n    if (localStorage.getItem('measurment') === 'cel') {\n      celsius.classList.remove('active');\n      fareng.classList.add('active');\n      localStorage.setItem('measurment', 'far');\n      Object(_toFareng_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"temperatureToday\"]);\n      Object(_toFareng_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"temperatureFeels\"]);\n      Object(_toFareng_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"firstDay\"]);\n      Object(_toFareng_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"secondDay\"]);\n      Object(_toFareng_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"thirdDay\"]);\n    }\n  });\n  celsius.addEventListener('click', () => {\n    if (localStorage.getItem('measurment') === 'far') {\n      fareng.classList.remove('active');\n      celsius.classList.add('active');\n      localStorage.setItem('measurment', 'cel');\n      Object(_toCels_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"temperatureToday\"]);\n      Object(_toCels_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"temperatureFeels\"]);\n      Object(_toCels_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"firstDay\"]);\n      Object(_toCels_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"secondDay\"]);\n      Object(_toCels_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(_consts_js__WEBPACK_IMPORTED_MODULE_2__[\"thirdDay\"]);\n    }\n  });\n}\n\n//# sourceURL=webpack:///./app/convertation.js?");
+
+/***/ }),
+
+/***/ "./app/getLocationInfo.js":
+/*!********************************!*\
+  !*** ./app/getLocationInfo.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getLocationInfo; });\n/* harmony import */ var _getWeatherData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getWeatherData.js */ \"./app/getWeatherData.js\");\n\nfunction getLocationInfo() {\n  const locationUrl = `https://ipinfo.io/json?token=00b98e0e0baa98`;\n  fetch(locationUrl).then(response => {\n    return response.json();\n  }).then(data => {\n    const location = {\n      latitude: data.loc.split(',')[0],\n      longtitude: data.loc.split(',')[1],\n      city: data.city,\n      country: data.country\n    };\n    Object(_getWeatherData_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(location);\n  });\n}\n\n//# sourceURL=webpack:///./app/getLocationInfo.js?");
+
+/***/ }),
+
+/***/ "./app/getWeatherData.js":
+/*!*******************************!*\
+  !*** ./app/getWeatherData.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getWeatherData; });\n/* harmony import */ var _showAllDetails_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./showAllDetails.js */ \"./app/showAllDetails.js\");\n\nfunction getWeatherData(location) {\n  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longtitude}&appid=f10034f045888292e6951fae8b6f832a`).then(response => {\n    return response.json();\n  }).then(data => {\n    let newDay;\n    let day = data.list[0].dt_txt.substring(8, 10);\n    let measurment = localStorage.getItem('measurment');\n    let tempInCels = Math.floor(data.list[0].main.temp - 273);\n    let tempFeelsInCels = Math.floor(data.list[0].main.feels_like - 273);\n    const weather = {\n      temp: measurment === 'cel' ? tempInCels : Math.floor(tempInCels * 9 / 5 + 32),\n      tempFeels: measurment === 'cel' ? tempFeelsInCels : Math.floor(tempFeelsInCels * 9 / 5 + 32),\n      wind: data.list[0].wind.speed,\n      humidity: data.list[0].main.humidity\n    };\n    let threeDaysWeather = new Object();\n    data.list.forEach((item, index) => {\n      newDay = item.dt_txt.substring(8, 10);\n\n      if (newDay === day + 1) {\n        threeDaysWeather.firstDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;\n      }\n\n      if (newDay === day + 2) {\n        threeDaysWeather.secondDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;\n      }\n\n      if (newDay === day + 3) {\n        threeDaysWeather.thirdDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;\n      }\n    });\n    Object(_showAllDetails_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(location, weather, threeDaysWeather);\n  });\n}\n\n//# sourceURL=webpack:///./app/getWeatherData.js?");
+
+/***/ }),
+
+/***/ "./app/mapSet.js":
+/*!***********************!*\
+  !*** ./app/mapSet.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return mapSet; });\nfunction mapSet(la, long) {\n  mapboxgl.accessToken = 'pk.eyJ1IjoibGVxc2FyIiwiYSI6ImNrYW5yeTZidjB3djQycnFtdTV0ZTVvYjMifQ.WT8gCkDu90rFZ9dD4kWWsQ';\n  let map = new mapboxgl.Map({\n    container: 'map',\n    style: 'mapbox://styles/mapbox/streets-v9',\n    center: [long, la],\n    zoom: 8\n  });\n  let marker = new mapboxgl.Marker().setLngLat([long, la]).addTo(map);\n}\n\n//# sourceURL=webpack:///./app/mapSet.js?");
+
+/***/ }),
+
+/***/ "./app/showAllDetails.js":
+/*!*******************************!*\
+  !*** ./app/showAllDetails.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return showAllDetails; });\n/* harmony import */ var _mapSet_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mapSet.js */ \"./app/mapSet.js\");\n/* harmony import */ var _consts_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./consts.js */ \"./app/consts.js\");\n\n\nfunction showAllDetails(location, weather, threeDaysWeather) {\n  const degreesLa = Math.floor(location.latitude);\n  const minutesLa = Math.floor((location.latitude - degreesLa) * 60);\n  const degreesLong = Math.floor(location.longtitude);\n  const minutesLong = Math.floor((location.longtitude - degreesLong) * 60);\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"latitude\"].textContent = `Latitude: ${degreesLa}° ${minutesLa}'`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"longtitude\"].textContent = `Longtitude: ${degreesLong}° ${minutesLong}'`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"region\"].textContent = `${location.city}, ${location.country}`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"temperatureToday\"].textContent = `${weather.temp}°`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"temperatureFeels\"].textContent = `${weather.tempFeels}°`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"windToday\"].textContent = `WIND: ${weather.wind} m/s`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"humidityToday\"].textContent = `HUMIDITY: ${weather.humidity}%`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"firstDay\"].textContent = `${threeDaysWeather.firstDayTemp}°`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"secondDay\"].textContent = `${threeDaysWeather.secondDayTemp}°`;\n  _consts_js__WEBPACK_IMPORTED_MODULE_1__[\"thirdDay\"].textContent = `${threeDaysWeather.thirdDayTemp}°`;\n  Object(_mapSet_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(location.latitude, location.longtitude);\n}\n\n//# sourceURL=webpack:///./app/showAllDetails.js?");
+
+/***/ }),
+
+/***/ "./app/toCels.js":
+/*!***********************!*\
+  !*** ./app/toCels.js ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return toCels; });\nfunction toCels(tempContainer) {\n  let farTemperature = tempContainer.textContent;\n  let number = farTemperature.substring(0, farTemperature.length - 1);\n  let celTemperature = Math.floor((number - 32) * 5 / 9);\n  tempContainer.textContent = `${celTemperature}°`;\n}\n\n//# sourceURL=webpack:///./app/toCels.js?");
+
+/***/ }),
+
+/***/ "./app/toFareng.js":
+/*!*************************!*\
+  !*** ./app/toFareng.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return toFareng; });\nfunction toFareng(tempContainer) {\n  let celTemperature = tempContainer.textContent;\n  let number = celTemperature.substring(0, celTemperature.length - 1);\n  let farTemperature = Math.floor(number * 9 / 5 + 32);\n  tempContainer.textContent = `${farTemperature}°`;\n}\n\n//# sourceURL=webpack:///./app/toFareng.js?");
+
+/***/ }),
+
 /***/ "./index.js":
 /*!******************!*\
   !*** ./index.js ***!
   \******************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("const locationKey = '00b98e0e0baa98';\nconst locationUrl = `https://ipinfo.io/json?token=00b98e0e0baa98`;\nconst latitude = document.querySelector('.map-container__coordinates__lat');\nconst longtitude = document.querySelector('.map-container__coordinates__long');\nconst region = document.querySelector('.weather__user-info__location');\nconst temperatureToday = document.querySelector('.weather__today-info__temperature');\nconst temperatureFeels = document.querySelector('.weather__feels__temp');\nconst windToday = document.querySelector('.weather__today-data__wind');\nconst humidityToday = document.querySelector('.weather__today-data__humidity');\nconst firstDay = document.querySelector('.weather-week__first-day__temperature P');\nconst secondDay = document.querySelector('.weather-week__second-day__temperature P');\nconst thirdDay = document.querySelector('.weather-week__third-day__temperature P');\nconst imageChanger = document.querySelector('.settings__image-changer');\nconst fareng = document.querySelector('.far');\nconst celsius = document.querySelector('.cel');\nconst days = {\n  1: 'Mon',\n  2: 'Tue',\n  3: 'Wen',\n  4: 'Thu',\n  5: 'Fri',\n  6: 'Sat',\n  7: 'Sun'\n};\nconst monthes = {\n  0: 'January',\n  1: 'February',\n  2: 'March',\n  3: 'April',\n  4: 'May',\n  5: 'June',\n  6: 'July',\n  7: 'August',\n  8: 'September',\n  9: 'October',\n  10: 'November',\n  11: 'December'\n};\n\nif (localStorage.getItem('measurment') === undefined) {\n  localStorage.setItem('measurment', 'cel');\n  celsius.classList.add('active');\n} else {\n  celsius.classList.add('active');\n}\n\nfetch(locationUrl).then(response => {\n  return response.json();\n}).then(data => {\n  const location = {\n    latitude: data.loc.split(',')[0],\n    longtitude: data.loc.split(',')[1],\n    city: data.city,\n    country: data.country\n  };\n  getWeatherData(location);\n});\nclocks();\nimageChanger.addEventListener('click', () => {});\nfareng.addEventListener('click', () => {\n  if (localStorage.getItem('measurment') === 'cel') {\n    celsius.classList.remove('active');\n    fareng.classList.add('active');\n    localStorage.setItem('measurment', 'far');\n    toFareng(temperatureToday);\n    toFareng(temperatureFeels);\n    toFareng(firstDay);\n    toFareng(secondDay);\n    toFareng(thirdDay);\n  }\n});\ncelsius.addEventListener('click', () => {\n  if (localStorage.getItem('measurment') === 'far') {\n    fareng.classList.remove('active');\n    celsius.classList.add('active');\n    localStorage.setItem('measurment', 'cel');\n    toCels(temperatureToday);\n    toCels(temperatureFeels);\n    toCels(firstDay);\n    toCels(secondDay);\n    toCels(thirdDay);\n  }\n});\n\nfunction toFareng(tempContainer) {\n  let celTemperature = tempContainer.textContent;\n  let number = celTemperature.substring(0, celTemperature.length - 1);\n  let farTemperature = Math.floor(number * 9 / 5 + 32);\n  tempContainer.textContent = `${farTemperature}°`;\n}\n\nfunction toCels(tempContainer) {\n  let farTemperature = tempContainer.textContent;\n  let number = farTemperature.substring(0, farTemperature.length - 1);\n  let celTemperature = Math.floor((number - 32) * 5 / 9);\n  tempContainer.textContent = `${celTemperature}°`;\n}\n\nfunction getWeatherData(location) {\n  fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longtitude}&appid=f10034f045888292e6951fae8b6f832a`).then(response => {\n    return response.json();\n  }).then(data => {\n    let newDay;\n    let day = data.list[0].dt_txt.substring(8, 10);\n    let measurment = localStorage.getItem('measurment');\n    let tempInCels = Math.floor(data.list[0].main.temp - 273);\n    let tempFeelsInCels = Math.floor(data.list[0].main.feels_like - 273);\n    const weather = {\n      temp: measurment === 'cel' ? tempInCels : Math.floor(tempInCels * 9 / 5 + 32),\n      tempFeels: measurment === 'cel' ? tempFeelsInCels : Math.floor(tempFeelsInCels * 9 / 5 + 32),\n      wind: data.list[0].wind.speed,\n      humidity: data.list[0].main.humidity\n    };\n    let threeDaysWeather = new Object();\n    data.list.forEach((item, index) => {\n      newDay = item.dt_txt.substring(8, 10);\n\n      if (newDay === day + 1) {\n        threeDaysWeather.firstDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;\n      }\n\n      if (newDay === day + 2) {\n        threeDaysWeather.secondDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;\n      }\n\n      if (newDay === day + 3) {\n        threeDaysWeather.thirdDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;\n      }\n    });\n    showAllDetails(location, weather, threeDaysWeather);\n  });\n}\n\nfunction showAllDetails(location, weather, threeDaysWeather) {\n  const degreesLa = Math.floor(location.latitude);\n  const minutesLa = Math.floor((location.latitude - degreesLa) * 60);\n  const degreesLong = Math.floor(location.longtitude);\n  const minutesLong = Math.floor((location.longtitude - degreesLong) * 60);\n  latitude.textContent = `Latitude: ${degreesLa}° ${minutesLa}'`;\n  longtitude.textContent = `Longtitude: ${degreesLong}° ${minutesLong}'`;\n  region.textContent = `${location.city}, ${location.country}`;\n  temperatureToday.textContent = `${weather.temp}°`;\n  temperatureFeels.textContent = `${weather.tempFeels}°`;\n  windToday.textContent = `WIND: ${weather.wind} m/s`;\n  humidityToday.textContent = `HUMIDITY: ${weather.humidity}%`;\n  firstDay.textContent = `${threeDaysWeather.firstDayTemp}°`;\n  secondDay.textContent = `${threeDaysWeather.secondDayTemp}°`;\n  thirdDay.textContent = `${threeDaysWeather.thirdDayTemp}°`;\n  mapSet(location.latitude, location.longtitude);\n}\n\nfunction clocks() {\n  let timeNode = document.querySelector('.weather__user-info__time');\n\n  function getCurrentTimeString() {\n    return new Date().toTimeString().replace(/ .*/, '');\n  }\n\n  setInterval(function () {\n    let date = new Date();\n    const dayNumber = date.getDay();\n    const monthNumber = date.getMonth();\n    const day = date.getDate();\n    timeNode.textContent = `${days[dayNumber]} ${day} ${monthes[monthNumber]} ${getCurrentTimeString()}`;\n  }, 1000);\n}\n\nfunction mapSet(la, long) {\n  mapboxgl.accessToken = 'pk.eyJ1IjoibGVxc2FyIiwiYSI6ImNrYW5yeTZidjB3djQycnFtdTV0ZTVvYjMifQ.WT8gCkDu90rFZ9dD4kWWsQ';\n  let map = new mapboxgl.Map({\n    container: 'map',\n    style: 'mapbox://styles/mapbox/streets-v9',\n    center: [long, la],\n    zoom: 8\n  });\n  let marker = new mapboxgl.Marker().setLngLat([long, la]).addTo(map);\n}\n\n//# sourceURL=webpack:///./index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _app_convertation_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app/convertation.js */ \"./app/convertation.js\");\n/* harmony import */ var _app_changeBackground_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app/changeBackground.js */ \"./app/changeBackground.js\");\n/* harmony import */ var _app_clocks_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/clocks.js */ \"./app/clocks.js\");\n/* harmony import */ var _app_getWeatherData_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app/getWeatherData.js */ \"./app/getWeatherData.js\");\n/* harmony import */ var _app_getLocationInfo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app/getLocationInfo.js */ \"./app/getLocationInfo.js\");\n/* harmony import */ var _app_consts_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app/consts.js */ \"./app/consts.js\");\n\n\n\n\n\n\nconst imageChanger = document.querySelector('.settings__image-changer');\nconst fareng = document.querySelector('.far');\nconst celsius = document.querySelector('.cel');\n\nif (localStorage.getItem('measurment') === undefined) {\n  localStorage.setItem('measurment', 'cel');\n  celsius.classList.add('active');\n} else {\n  fareng.classList.add('active');\n}\n\nObject(_app_convertation_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nObject(_app_changeBackground_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\nObject(_app_clocks_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\nObject(_app_getLocationInfo_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\nimageChanger.addEventListener('click', changeBackgroud);\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ }),
 
