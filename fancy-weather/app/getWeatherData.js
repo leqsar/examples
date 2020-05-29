@@ -6,8 +6,9 @@ export default function getWeatherData(location) {
       return response.json();
     })
     .then(data => {
-      let newDay;
-      let day = data.list[0].dt_txt.substring(8, 10);
+      let datesArr = [];
+      console.log(data.list[0].weather[0].main);
+      let day = new Date(data.list[0].dt * 1000).getDay();
       let measurment = localStorage.getItem('measurment');
       let tempInCels = Math.floor(data.list[0].main.temp - 273);
       let tempFeelsInCels = Math.floor(data.list[0].main.feels_like - 273);
@@ -17,19 +18,23 @@ export default function getWeatherData(location) {
         wind: data.list[0].wind.speed,
         humidity: data.list[0].main.humidity
       };
-      let threeDaysWeather = new Object();
-      data.list.forEach((item, index) => {
-        newDay = item.dt_txt.substring(8, 10);
-        if (newDay === day + 1) {
-          threeDaysWeather.firstDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;
-        }
-        if (newDay === day + 2) {
-          threeDaysWeather.secondDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;
-        }
-        if (newDay === day + 3) {
-          threeDaysWeather.thirdDayTemp = `${Math.floor(data.list[index + 4].main.temp - 273)}`;
-        }
-      });
+      data.list.forEach((item) => {
+        datesArr.push(new Date(item.dt * 1000).getDay());
+      })
+      const firstDay = day === 6 ? 0 : day + 1;
+      const secondDay = firstDay === 6 ? 0 : firstDay + 1;
+      const thirdDay = secondDay === 6 ? 0 : secondDay + 1;
+      const firstDayTemp = Math.floor(data.list[datesArr.indexOf(firstDay)].main.temp - 273);
+      const secondDayTemp = Math.floor(data.list[datesArr.indexOf(secondDay)].main.temp - 273);
+      const thirdDayTemp = Math.floor(data.list[datesArr.indexOf(thirdDay)].main.temp - 273);
+      const threeDaysWeather = {
+        firstDayTemp: measurment === 'cel' ? firstDayTemp : Math.floor((firstDayTemp * 9 / 5) + 32),
+        secondDayTemp: measurment === 'cel' ? secondDayTemp : Math.floor((secondDayTemp * 9 / 5) + 32),
+        thirdDayTemp: measurment === 'cel' ? thirdDayTemp : Math.floor((thirdDayTemp * 9 / 5) + 32),
+        firstDayNumber: firstDay,
+        secondDayNumber: secondDay,
+        thirdDayNumber: thirdDay
+      }
       showAllDetails(location, weather, threeDaysWeather);
     })
 }

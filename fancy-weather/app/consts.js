@@ -5,9 +5,9 @@ const temperatureToday = document.querySelector('.weather__today-info__temperatu
 const temperatureFeels = document.querySelector('.weather__feels__temp');
 const windToday = document.querySelector('.weather__today-data__wind');
 const humidityToday = document.querySelector('.weather__today-data__humidity');
-const firstDay = document.querySelector('.weather-week__first-day__temperature P');
-const secondDay = document.querySelector('.weather-week__second-day__temperature P');
-const thirdDay = document.querySelector('.weather-week__third-day__temperature P');
+const firstDayContainer = document.querySelector('.weather-week__first-day__temperature P');
+const secondDayContainer = document.querySelector('.weather-week__second-day__temperature P');
+const thirdDayContainer = document.querySelector('.weather-week__third-day__temperature P');
 const days = {
   1: 'Monday',
   2: 'Tueday',
@@ -15,7 +15,7 @@ const days = {
   4: 'Thursday',
   5: 'Friday',
   6: 'Saturday',
-  7: 'Sunday'
+  0: 'Sunday'
 };
 const monthes = {
   0: 'January',
@@ -31,4 +31,4 @@ const monthes = {
   10: 'November',
   11: 'December'
 };
-export {temperatureToday, temperatureFeels, firstDay, secondDay, thirdDay, windToday, humidityToday, latitude, longtitude, region, days, monthes}
+export {temperatureToday, temperatureFeels, firstDayContainer, secondDayContainer, thirdDayContainer, windToday, humidityToday, latitude, longtitude, region, days, monthes}

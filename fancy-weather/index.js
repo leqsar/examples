@@ -16,10 +16,9 @@ if (localStorage.getItem('measurment') === undefined) {
 } else {
   fareng.classList.add('active');
 }
-
+clocks(new Date());
 search();
 convertation();
 changeBackground();
-clocks(new Date());
 getLocationInfo();
 imageChanger.addEventListener('click', changeBackground);

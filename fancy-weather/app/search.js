@@ -2,11 +2,10 @@ import getWeatherData from './getWeatherData.js';
 export default function search() {
   const textArea = document.querySelector('.search-container__textarea');
   const form = document.querySelector('.search-container');
+  const error = document.querySelector('.error-container__error');
   form.addEventListener('submit', (event) => {
-    console.log('here');
     let searchQuery = textArea.value;
-    let url = `https://api.opencagedata.com/geocode/v1/json?q=${searchQuery}&key=04dc1a8695d14a18a47ac6107ddcb380&pretty=1&no_annotations=1`
-    console.log(searchQuery);
+    let url = `https://api.opencagedata.com/geocode/v1/json?q=${searchQuery}&key=04dc1a8695d14a18a47ac6107ddcb380&pretty=1&no_annotations=1`;
     event.preventDefault();
     fetch(url)
       .then((response) => {
@@ -24,7 +23,6 @@ export default function search() {
           };
           getWeatherData(location);
         } else {
-          const error = document.querySelector('.error-container__error');
           error.textContent = 'No results were found for your request';
           error.style.visibility = 'visible';
         }

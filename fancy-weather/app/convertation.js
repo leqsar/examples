@@ -1,6 +1,6 @@
 import toFareng from './toFareng.js';
 import toCels from './toCels.js';
-import {temperatureToday, temperatureFeels, firstDay, secondDay, thirdDay} from './consts.js'
+import {temperatureToday, temperatureFeels, firstDayContainer, secondDayContainer, thirdDayContainer} from './consts.js'
 
 export default function convertation() {
   const fareng = document.querySelector('.far');
@@ -12,9 +12,9 @@ export default function convertation() {
       localStorage.setItem('measurment', 'far');
       toFareng(temperatureToday);
       toFareng(temperatureFeels);
-      toFareng(firstDay);
-      toFareng(secondDay);
-      toFareng(thirdDay);
+      toFareng(firstDayContainer);
+      toFareng(secondDayContainer);
+      toFareng(thirdDayContainer);
     }
   });
 
@@ -25,9 +25,9 @@ export default function convertation() {
       localStorage.setItem('measurment', 'cel');
       toCels(temperatureToday);
       toCels(temperatureFeels);
-      toCels(firstDay);
-      toCels(secondDay);
-      toCels(thirdDay);
+      toCels(firstDayContainer);
+      toCels(secondDayContainer);
+      toCels(thirdDayContainer);
     }
   });
 }
