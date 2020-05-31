@@ -29,9 +29,9 @@ const humidity = {
   be: 'ВIЛЬГОТНАСЦЬ'
 };
 const feels = {
-  en: 'FEELS LIKE',
-  ru: 'ОЩУЩАЕТСЯ',
-  be: 'АДЧУВАЕЦЦА'
+  en: 'FEELS LIKE :',
+  ru: 'ОЩУЩАЕТСЯ :',
+  be: 'АДЧУВАЕЦЦА :'
 };
 const overcast = {
   en: 'OVERCAST',

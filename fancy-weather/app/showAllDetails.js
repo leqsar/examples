@@ -39,7 +39,7 @@ export default function showAllDetails(location, weather, threeDaysWeather) {
   secondDayIcon.src = getSrc(threeDaysWeather.secondDayType);
   thirdDayIcon.src = getSrc(threeDaysWeather.thirdDayType);
   temperatureToday.textContent = `${weather.temp}°`;
-  temperatureFeels.textContent = `: ${weather.tempFeels}°`;
+  temperatureFeels.textContent = ` ${weather.tempFeels}°`;
   windToday.textContent = `: ${weather.wind} m/s`;
   windTodayText.textContent = `${wind[lang]}`;
   humidityToday.textContent = `: ${weather.humidity}%`;

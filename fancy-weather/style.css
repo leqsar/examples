@@ -1,6 +1,6 @@
 body {
   max-width: 1440px;
-  max-height: 800px;
+  max-height: 100vh;
   margin: 0 auto;
   color: white;
   background-size: cover;
@@ -145,9 +145,9 @@ img {
 }
 
 .weather__today-data {
-  margin-left: 92px;
+  margin-left: 42px;
   margin-top: 54px;
-  width: 200px;
+  width: 250px;
 }
 
 .weather__today-data li {
@@ -210,6 +210,8 @@ img {
   border-radius: 200px;
   margin-top: 50px;
   margin-left: 50px;
+  width: 400px;
+  height: 400px;
 }
 
 .map-container__map {
@@ -264,4 +266,403 @@ img {
 .micro-icon:hover {
   cursor: pointer;
   filter: invert(20%) sepia(70%) saturate(5929%) hue-rotate(129deg) brightness(93%) contrast(73%);
+}
+
+@media (min-width: 1350px) and (max-width: 1400px) {
+  .map-container__map {
+    margin-left: 5vw;
+  }
+
+  .map-container {
+    width: 35vw;
+  }
+
+  .weather {
+    width: 55vw;
+  }
+
+  .map-container__coordinates {
+    width: 27vw;
+  }
+
+  .search-container {
+    margin-left: 40vw;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1349px) {
+  .map-container__map {
+    margin-left: 5vw;
+  }
+
+  .map-container {
+    width: 30vw;
+  }
+
+  .weather {
+    width: 50vw;
+  }
+
+  .map-container__coordinates {
+    width: 25vw;
+  }
+
+  .search-container {
+    margin-left: 35vw;
+  }
+
+  .weather__today-info__temperature {
+    font-size: 20vw;
+  }
+
+  .weather__today-data {
+    width: 17vw;
+  }
+
+  .weather__today-data li {
+    font-size: 1.5vw;
+  }
+}
+
+@media (min-width: 1050px) and (max-width: 1199px) {
+  #map {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .map-container__map {
+    margin-left: 5vw;
+  }
+
+  .map-container {
+    width: 30vw;
+  }
+
+  .weather {
+    width: 50vw;
+  }
+
+  .map-container__coordinates {
+    width: 25vw;
+  }
+
+  .search-container {
+    margin-left: 27vw;
+  }
+
+  .weather__today-info__temperature {
+    font-size: 20vw;
+  }
+
+  .weather__today-data {
+    width: 17vw;
+  }
+
+  .weather__today-data li {
+    font-size: 1.5vw;
+  }
+
+  .weather-week__first-day__temperature img,
+  .weather-week__second-day__temperature img,
+  .weather-week__third-day__temperature img {
+    width: 5vw;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1049px) {
+  #map {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .map-container__map {
+    margin-left: 5vw;
+  }
+
+  .map-container {
+    width: 30vw;
+  }
+
+  .weather {
+    width: 50vw;
+    margin-left: 5vw;
+  }
+
+  .settings {
+    margin-left: 5vw;
+  }
+
+  .map-container__coordinates {
+    width: 25vw;
+  }
+
+  .search-container {
+    margin-left: 20vw;
+  }
+
+  .search-container__textarea {
+    width: 25vw;
+  }
+
+  .weather__today-info__temperature {
+    font-size: 20vw;
+  }
+
+  .weather__today-data {
+    width: 17vw;
+  }
+
+  .weather__today-data li {
+    font-size: 1.5vw;
+  }
+
+  .weather-week__first-day__temperature img,
+  .weather-week__second-day__temperature img,
+  .weather-week__third-day__temperature img {
+    width: 3vw;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 799px) {
+  main {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  #map {
+    width: 50vw;
+    height: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .map-container__map {
+    margin-left: 5vw;
+  }
+
+  .map-container {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .settings,
+  .search-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-container {
+    width: 80vw;
+  }
+
+  .search-container__textarea {
+    width: 60vw;
+  }
+
+  .map-container__coordinates {
+    width: 50vw;
+  }
+
+  .weather__today-info__temperature {
+    font-size: 20vw;
+  }
+
+  .weather__today-data {
+    width: 30vw;
+  }
+
+  .weather__today-data li {
+    font-size: 2.5vw;
+  }
+
+  .weather-week__first-day__temperature img,
+  .weather-week__second-day__temperature img,
+  .weather-week__third-day__temperature img {
+    width: 8vw;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 599px) {
+  main {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  #map {
+    width: 50vw;
+    height: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .map-container__map {
+    margin-left: 5vw;
+    height: 60vw;
+  }
+
+  .map-container {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .settings,
+  .search-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-container {
+    width: 80vw;
+  }
+
+  .search-container__textarea {
+    width: 60vw;
+  }
+
+  .map-container__coordinates {
+    width: 50vw;
+    margin-top: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather__today-info__temperature {
+    font-size: 20vw;
+  }
+
+  .weather__today-data {
+    width: 30vw;
+  }
+
+  .weather__today-data li {
+    font-size: 2.5vw;
+  }
+
+  .weather-week__first-day__temperature img,
+  .weather-week__second-day__temperature img,
+  .weather-week__third-day__temperature img {
+    width: 6vw;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 599px) {
+  main {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .weather-week,
+  .weather__today-info {
+    flex-direction: column;
+  }
+
+  .weather__today-info__temperature {
+    text-align: center;
+  }
+
+  #map {
+    width: 50vw;
+    height: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .map-container__map {
+    margin-left: 5vw;
+    height: 60vw;
+  }
+
+  .map-container {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather {
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .settings,
+  .search-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .search-container {
+    width: 80vw;
+  }
+
+  .search-container__textarea {
+    width: 60vw;
+  }
+
+  .map-container__coordinates {
+    width: 50vw;
+    margin-top: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather__today-info__temperature {
+    font-size: 40vw;
+  }
+
+  .weather__today-data {
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather__today-data li {
+    font-size: 4vw;
+  }
+
+  .weather-week__first-day,
+  .weather-week__second-day,
+  .weather-week__third-day {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .weather-week__first-day__temperature,
+  .weather-week__second-day__temperature,
+  .weather-week__third-day__temperature {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .weather-week__day {
+    text-align: center;
+  }
+
+  .weather-week__first-day__temperature img,
+  .weather-week__second-day__temperature img,
+  .weather-week__third-day__temperature img {
+    width: 10vw;
+  }
 }
