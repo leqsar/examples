@@ -41,7 +41,7 @@ const overcast = {
 const days = {
   en: {
     1: 'Monday',
-    2: 'Tueday',
+    2: 'Tuesday',
     3: 'Wednesday',
     4: 'Thursday',
     5: 'Friday',

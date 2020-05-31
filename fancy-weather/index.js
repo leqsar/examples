@@ -5,6 +5,7 @@ import getWeatherData from './app/getWeatherData.js';
 import getLocationInfo from './app/getLocationInfo.js';
 import search from './app/search.js';
 import translate from './app/translate.js';
+import voiceSearch from './app/voiceSearch.js';
 import {temperatureToday, temperatureFeels, firstDay, secondDay, thirdDay, windToday, humidityToday, latitude, longtitude, region} from './app/consts.js';
 
 const imageChanger = document.querySelector('.settings__image-changer');
@@ -48,6 +49,7 @@ if (localStorage.getItem('language') === (undefined || null)) {
   }
 }
 
+voiceSearch();
 clocks(new Date());
 search();
 convertation();
