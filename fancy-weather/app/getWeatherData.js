@@ -18,6 +18,7 @@ export default function getWeatherData(location) {
         humidity: data.list[0].main.humidity,
         type: data.list[0].weather[0].main
       };
+      localStorage.setItem('overcast', `${data.list[0].weather[0].main}`);
       data.list.forEach((item) => {
         datesArr.push(new Date(item.dt * 1000).getDay());
       })

@@ -1,8 +1,10 @@
 import mapSet from './mapSet.js';
 import getSrc from './getSrc.js';
+import changeBackground from './changeBackground.js';
 import {temperatureToday, temperatureFeels, firstDayContainer, secondDayContainer, thirdDayContainer, windToday, humidityToday, latitude, longtitude, region, days, laCoordinates, longCoordinates, wind, humidity, feels, overcast} from './consts.js';
 
 export default function showAllDetails(location, weather, threeDaysWeather) {
+  changeBackground();
   let lang = localStorage.getItem('language');
   const degreesLa = Math.floor(location.latitude);
   const minutesLa = Math.floor((location.latitude - degreesLa) * 60);

@@ -12,6 +12,7 @@ export default function clocks() {
       const monthNumber = date.getMonth();
       const day = date.getDate();
       timeNode.textContent = `${days[lang][dayNumber]} ${day} ${monthes[lang][monthNumber]} ${getCurrentTimeString()}`;
+      localStorage.setItem('month', `${monthNumber}`);
     },
     1000
   );
