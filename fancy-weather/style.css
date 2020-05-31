@@ -97,6 +97,22 @@ img {
 .search-container__textarea {
   width: 274px;
   height: 44px;
+  background: rgba(76, 82, 85, 0.4);
+  border: 1px solid rgba(228, 227, 227, 0.2);
+  box-sizing: border-box;
+  outline: none;
+}
+
+.search-container__button {
+  background-image: url('search.svg');
+  background-color: rgba(76, 82, 85, 0.4);
+  background-repeat: no-repeat;
+  outline: none;
+}
+
+.search-icon {
+  width: 40px;
+  height: 40px;
 }
 
 .search-container {
@@ -365,7 +381,13 @@ img {
   .weather-week__first-day__temperature img,
   .weather-week__second-day__temperature img,
   .weather-week__third-day__temperature img {
-    width: 5vw;
+    width: 3vw;
+  }
+
+  .first-day,
+  .second-day,
+  .third-day {
+    font-size: 5vw;
   }
 }
 
@@ -420,6 +442,16 @@ img {
   .weather-week__second-day__temperature img,
   .weather-week__third-day__temperature img {
     width: 3vw;
+  }
+
+  .first-day,
+  .second-day,
+  .third-day {
+    font-size: 5vw;
+  }
+
+  .weather-week__day {
+    font-size: 2vw;
   }
 }
 
@@ -489,6 +521,12 @@ img {
   .weather-week__second-day__temperature img,
   .weather-week__third-day__temperature img {
     width: 8vw;
+  }
+
+  .first-day,
+  .second-day,
+  .third-day {
+    font-size: 8vw;
   }
 }
 
