@@ -6,11 +6,12 @@ export default function clocks() {
   }
   setInterval(
     function() {
+      const lang = localStorage.getItem('language');
       let date = new Date();
       const dayNumber = date.getDay();
       const monthNumber = date.getMonth();
       const day = date.getDate();
-      timeNode.textContent = `${days[dayNumber]} ${day} ${monthes[monthNumber]} ${getCurrentTimeString()}`;
+      timeNode.textContent = `${days[lang][dayNumber]} ${day} ${monthes[lang][monthNumber]} ${getCurrentTimeString()}`;
     },
     1000
   );

@@ -27,13 +27,13 @@ export default function getWeatherData(location) {
       const firstDayTemp = Math.floor(data.list[datesArr.indexOf(firstDay)].main.temp - 273);
       const secondDayTemp = Math.floor(data.list[datesArr.indexOf(secondDay)].main.temp - 273);
       const thirdDayTemp = Math.floor(data.list[datesArr.indexOf(thirdDay)].main.temp - 273);
+      localStorage.setItem('firstDay', `${firstDay}`);
+      localStorage.setItem('secondDay', `${secondDay}`);
+      localStorage.setItem('thirdDay', `${thirdDay}`);
       const threeDaysWeather = {
         firstDayTemp: measurment === 'cel' ? firstDayTemp : Math.floor((firstDayTemp * 9 / 5) + 32),
         secondDayTemp: measurment === 'cel' ? secondDayTemp : Math.floor((secondDayTemp * 9 / 5) + 32),
         thirdDayTemp: measurment === 'cel' ? thirdDayTemp : Math.floor((thirdDayTemp * 9 / 5) + 32),
-        firstDayNumber: firstDay,
-        secondDayNumber: secondDay,
-        thirdDayNumber: thirdDay,
         firstDayType: data.list[datesArr.indexOf(firstDay)].weather[0].main,
         secondDayType: data.list[datesArr.indexOf(secondDay)].weather[0].main,
         thirdDayType: data.list[datesArr.indexOf(thirdDay)].weather[0].main
