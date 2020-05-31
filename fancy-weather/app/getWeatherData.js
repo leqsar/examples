@@ -7,7 +7,6 @@ export default function getWeatherData(location) {
     })
     .then(data => {
       let datesArr = [];
-      console.log(data.list[0].weather[0].main);
       let day = new Date(data.list[0].dt * 1000).getDay();
       let measurment = localStorage.getItem('measurment');
       let tempInCels = Math.floor(data.list[0].main.temp - 273);
@@ -16,7 +15,8 @@ export default function getWeatherData(location) {
         temp: measurment === 'cel' ? tempInCels : Math.floor((tempInCels * 9 / 5) + 32),
         tempFeels: measurment === 'cel' ? tempFeelsInCels : Math.floor((tempFeelsInCels * 9 / 5) + 32),
         wind: data.list[0].wind.speed,
-        humidity: data.list[0].main.humidity
+        humidity: data.list[0].main.humidity,
+        type: data.list[0].weather[0].main
       };
       data.list.forEach((item) => {
         datesArr.push(new Date(item.dt * 1000).getDay());
@@ -33,7 +33,10 @@ export default function getWeatherData(location) {
         thirdDayTemp: measurment === 'cel' ? thirdDayTemp : Math.floor((thirdDayTemp * 9 / 5) + 32),
         firstDayNumber: firstDay,
         secondDayNumber: secondDay,
-        thirdDayNumber: thirdDay
+        thirdDayNumber: thirdDay,
+        firstDayType: data.list[datesArr.indexOf(firstDay)].weather[0].main,
+        secondDayType: data.list[datesArr.indexOf(secondDay)].weather[0].main,
+        thirdDayType: data.list[datesArr.indexOf(thirdDay)].weather[0].main
       }
       showAllDetails(location, weather, threeDaysWeather);
     })

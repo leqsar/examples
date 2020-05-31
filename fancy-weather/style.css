@@ -25,6 +25,10 @@ main {
   width: 100%;
 }
 
+img {
+  filter: invert(100%) sepia(0%) saturate(7458%) hue-rotate(179deg) brightness(114%) contrast(93%);
+}
+
 .settings {
   display: flex;
   margin-left: 93px;
@@ -145,7 +149,7 @@ main {
 
 .weather__today-data {
   margin-left: 92px;
-  margin-top: 154px;
+  margin-top: 54px;
   width: 200px;
 }
 
@@ -180,8 +184,21 @@ main {
 .weather-week__second-day,
 .weather-week__third-day,
 .weather-week__first-day {
-  width: 160px;
+  width: 220px;
   overflow: hidden;
+}
+
+.weather-week__first-day__temperature,
+.weather-week__second-day__temperature,
+.weather-week__third-day__temperature {
+   display: flex;
+ }
+
+.weather-week__first-day__temperature img,
+.weather-week__second-day__temperature img,
+.weather-week__third-day__temperature img {
+  width: 80px;
+  height: 64px;
 }
 
 .weather-week__temperature {

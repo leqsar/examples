@@ -6,6 +6,7 @@ export default function getLocationInfo() {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       const location = {
         latitude: data.loc.split(',')[0],
         longtitude: data.loc.split(',')[1],

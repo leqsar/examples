@@ -31,4 +31,65 @@ const monthes = {
   10: 'November',
   11: 'December'
 };
-export {temperatureToday, temperatureFeels, firstDayContainer, secondDayContainer, thirdDayContainer, windToday, humidityToday, latitude, longtitude, region, days, monthes}
+const russianMonthes = {
+  0: 'Январь',
+  1: 'Февраль',
+  2: 'Март',
+  3: 'Апрель',
+  4: 'Май',
+  5: 'Июнь',
+  6: 'Июль',
+  7: 'Август',
+  8: 'Сентябрь',
+  9: 'Октябрь',
+  10: 'Ноябрь',
+  11: 'Декабрь'
+}
+const russianDays = {
+  1: 'Понедельник',
+  2: 'Вторник',
+  3: 'Среда',
+  4: 'Четверг',
+  5: 'Пятница',
+  6: 'Суббота',
+  0: 'Воскресенье'
+}
+const belarussianMonthes = {
+  0: 'Студзень',
+  1: 'Люты',
+  2: 'Сакавiк',
+  3: 'Красавiк',
+  4: 'Май',
+  5: 'Лiпень',
+  6: 'Чэрвень',
+  7: 'Жнiвень',
+  8: 'Верасень',
+  9: 'Кастрычнiк',
+  10: 'Лiстапад',
+  11: 'Снежань'
+}
+const belarussianDays = {
+  1: 'Панядзелак',
+  2: 'Ауторак',
+  3: 'Серада',
+  4: 'Чацвер',
+  5: 'Пятнiца',
+  6: 'Субота',
+  0: 'Нядзеля'
+}
+export { temperatureToday,
+    temperatureFeels,
+    firstDayContainer,
+    secondDayContainer,
+    thirdDayContainer,
+    windToday,
+    humidityToday,
+    latitude,
+    longtitude,
+    region,
+    days,
+    monthes,
+    russianMonthes,
+    russianDays,
+    belarussianMonthes,
+    belarussianDays }
