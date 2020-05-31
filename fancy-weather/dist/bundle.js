@@ -154,7 +154,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getSrc; });\nfunction getSrc(weatherType) {\n  var src;\n\n  switch (weatherType) {\n    case 'Rain':\n      src = 'cloud-rain.svg';\n      break;\n\n    case 'Clear':\n      src = 'sun.svg';\n      break;\n\n    case 'Snow':\n      src = 'snowflake.svg';\n      break;\n\n    case 'Clouds':\n      src = 'cloud.svg';\n      break;\n\n    case 'Rain':\n      src = 'cloud-rain.svg';\n      break;\n\n    default:\n  }\n\n  return src;\n}\n\n//# sourceURL=webpack:///./app/getSrc.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return getSrc; });\nfunction getSrc(weatherType) {\n  var src;\n\n  switch (weatherType) {\n    case 'Rain':\n      src = 'images/cloud-rain.svg';\n      break;\n\n    case 'Clear':\n      src = 'images/sun.svg';\n      break;\n\n    case 'Snow':\n      src = 'images/snowflake.svg';\n      break;\n\n    case 'Clouds':\n      src = 'images/cloud.svg';\n      break;\n\n    case 'Rain':\n      src = 'images/cloud-rain.svg';\n      break;\n\n    default:\n  }\n\n  return src;\n}\n\n//# sourceURL=webpack:///./app/getSrc.js?");
 
 /***/ }),
 

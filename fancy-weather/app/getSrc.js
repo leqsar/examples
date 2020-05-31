@@ -2,19 +2,19 @@ export default function getSrc(weatherType) {
   let src;
   switch (weatherType) {
     case 'Rain':
-      src = 'cloud-rain.svg';
+      src = 'images/cloud-rain.svg';
       break;
     case 'Clear':
-      src = 'sun.svg';
+      src = 'images/sun.svg';
       break;
     case 'Snow':
-      src = 'snowflake.svg';
+      src = 'images/snowflake.svg';
       break;
     case 'Clouds':
-      src = 'cloud.svg';
+      src = 'images/cloud.svg';
       break;
     case 'Rain':
-      src = 'cloud-rain.svg';
+      src = 'images/cloud-rain.svg';
       break;
     default:
 
